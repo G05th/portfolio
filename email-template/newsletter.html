@@ -23,26 +23,57 @@
       display: block;
       border: 0;
     }
-    .floating-btn {
+    /* Container do botão e tooltip */
+.tooltip-container {
   position: fixed;
   bottom: 20px;
   right: 20px;
+  z-index: 1000;
+}
+
+/* Botão flutuante */
+.floating-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 60px;
   height: 60px;
   background-color: #007bff;
-  color: white;
-  border: none;
   border-radius: 50%;
-  font-size: 32px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  z-index: 1000;
+  text-decoration: none;
 }
 
 .floating-btn:hover {
   background-color: #0056b3;
   transform: scale(1.1);
+}
+
+.ghost-icon {
+  width: 32px;
+  height: 32px;
+}
+
+/* Tooltip */
+.tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
 }
   </style>
 </head>
@@ -102,8 +133,11 @@
       </td>
     </tr>
   </table>
-  <button class="floating-btn" onclick="handleClick()">
-    <a href="https://g05th.github.io/meu_portfolio_front_end/index.html">voltar ao portfólio</a>
-  </button>
+  <div class="tooltip-container">
+    <a href="https://g05th.github.io/meu_portfolio_front_end/index.html" class="floating-btn">
+      <img src="mini_ghost.png" alt="logo ghost" class="ghost-icon" />
+    </a>
+    <span class="tooltip-text">Voltar ao portfólio</span>
+  </div>
 </body>
 </html>

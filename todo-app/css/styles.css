@@ -439,6 +439,59 @@
   .todo-item button.delete:hover {
     color: #c0392b;
   }
+
+  /*btn flutuante*/
+  .tooltip-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+  
+  /* Botão flutuante */
+  .floating-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: #007bff;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+  }
+  
+  .floating-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+  }
+  
+  .ghost-icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  /* Tooltip */
+  .tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
   
   /* Animação de entrada dos itens */
   @keyframes fadeInUp {
