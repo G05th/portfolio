@@ -23,6 +23,27 @@
       display: block;
       border: 0;
     }
+    .floating-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 32px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 1000;
+}
+
+.floating-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
   </style>
 </head>
 <body>
@@ -81,5 +102,8 @@
       </td>
     </tr>
   </table>
+  <button class="floating-btn" onclick="handleClick()">
+    <a href="https://g05th.github.io/meu_portfolio_front_end/index.html">voltar ao portfólio</a>
+  </button>
 </body>
 </html>
