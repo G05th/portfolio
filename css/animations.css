@@ -1,0 +1,84 @@
+/*
+  animations.css
+  Keyframes e Classes de Animações
+  Autor: [Seu Nome]
+  Descrição: Fade, slide, typing, pulse e outras animações.
+*/
+
+/* ====== Fade & Slide ====== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-100%); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  @keyframes slideInRight {
+    from { opacity: 0; transform: translateX(100%); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  /* ====== Zoom & Rotate ====== */
+  @keyframes zoomIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  /* ====== Typing Animation ====== */
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blinkCaret {
+    from, to { border-color: transparent; }
+    50% { border-color: #fff; }
+  }
+  
+  /* ====== Bounce (Scroll Indicator) ====== */
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+  }
+  
+  /* ====== Pulse (Botões) ====== */
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  /* ====== Parallax Background ====== */
+  /* Será manipulado pelo JS para alterar transform no elemento */
+  
+  .parallax {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* ====== Loader (no CSS principal já definimos anim: spin) ====== */
+  
+  /* ====== Flip Card ====== */
+  /* A animação de flip já está configurada no styles.css com transform e transition */
+  
+  /* ====== Modal ====== */
+  /* Transição de fade-in para modal (pode ser aplicada via JS adicionando classe) */
+  @keyframes modalFadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  .modal-content {
+    animation: modalFadeIn 0.3s ease-in-out;
+  }
+  

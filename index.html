@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!--
+    index.html
+    Portfólio Pessoal – Página Principal (versão atualizada)
+    Autor: Germano Chita João
+    Descrição: Estrutura semântica e responsiva para portfólio moderno.
+    Alterações: Skills em carrossel automático; fundo do Hero em tons de azul.
+  -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio | Germano Chita João</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Google Fonts: Roboto (texto) e Montserrat (títulos) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS Geral e Animações -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader">
+      <div class="loader-circle"></div>
+      <p>Carregando...</p>
+    </div>
+  </div>
+
+  <!-- Botão de Dark Mode Toggle -->
+  <button id="theme-toggle" aria-label="Alternar modo claro/escuro">
+    🌙
+  </button>
+
+  <!-- Header / Nav -->
+  <header id="header">
+    <nav class="navbar">
+      <a href="#" class="logo">Germano Chita João</a>
+      <ul class="nav-menu">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">Sobre</a></li>
+        <li><a href="#projects" class="nav-link">Projetos</a></li>
+        <li><a href="#testimonials" class="nav-link">Depoimentos</a></li>
+        <li><a href="#contact" class="nav-link">Contato</a></li>
+      </ul>
+      <div class="nav-toggle" id="mobile-menu">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Seção Hero (com fundo azul-escuro) -->
+  <section id="hero" class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">Olá, eu sou <span class="highlight">Germano Chita João</span></h1>
+      <h2 class="hero-subtitle">Desenvolvedor Front-end &amp; UX Designer</h2>
+      <a href="#projects" class="btn btn-primary">Veja meus projetos</a>
+    </div>
+    <div class="scroll-down-indicator">
+      <!-- Seta animada -->
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Seção Sobre Mim -->
+  <section id="about" class="about-section">
+    <div class="container grid-two-col">
+      <div class="about-img-container">
+        <img src="assets/imagens/perfil.jpg" alt="Foto de Perfil de Germano Chita João" class="about-img">
+      </div>
+      <div class="about-text">
+        <h2>Sobre Mim</h2>
+        <p>
+          Sou formando em Ciência da Computação e atuo como FullStack Developer e UX Designer há 4 anos.  
+          Apaixonado por criar interfaces modernas, acessíveis e performáticas.  
+          Meu objetivo é entregar projetos que proporcionem a melhor experiência de usuário.
+        </p>
+        <p>
+          Habilidades Principais:
+        </p>
+        <!-- Carousel de Skills -->
+        <div class="skills-carousel-wrapper">
+          <div class="skills-carousel">
+            <div class="skill-item">
+              <img src="assets/icons/html-5.png" alt="HTML5" class="skill-icon">
+              <span class="tooltip">HTML5</span>
+            </div>
+            <div class="skill-item">
+              <img src="assets/icons/css-3.png" alt="CSS3" class="skill-icon">
+              <span class="tooltip">CSS3</span>
+            </div>
+            <div class="skill-item">
+              <img src="assets/icons/js.png" alt="JavaScript" class="skill-icon">
+              <span class="tooltip">JavaScript</span>
+            </div>
+            <div class="skill-item">
+              <img src="assets/icons/github.png" alt="Git" class="skill-icon">
+              <span class="tooltip">Git</span>
+            </div>
+            <!-- Exemplo para mais ícones; insira quantos quiser -->
+            <div class="skill-item">
+              <img src="assets/icons/biblioteca.png" alt="React" class="skill-icon">
+              <span class="tooltip">React</span>
+            </div>
+            <div class="skill-item">
+              <img src="assets/icons/nodejs.png" alt="Node.js" class="skill-icon">
+              <span class="tooltip">Node.js</span>
+            </div>
+            <div class="skill-item">
+              <img src="assets/icons/logotipo-da-linguagem-python.png" alt="GitLab" class="skill-icon">
+              <span class="tooltip">GitLab</span>
+            </div>
+            <!-- ... adicione outros ícones conforme necessário -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Seção Projetos (Portfolio) -->
+  <section id="projects" class="projects-section">
+    <div class="container">
+      <h2>Projetos</h2>
+      <!-- Filtros de Categoria -->
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="html-css">HTML/CSS</button>
+        <button class="filter-btn" data-filter="javascript">JavaScript</button>
+        <button class="filter-btn" data-filter="ux-ui">UX/UI</button>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-card" data-category="html-css">
+          <img src="assets/imagens/projecto1.png" alt="Projeto 1" class="project-thumb lazy" data-src="assets/imagens/projecto1.png">
+          <div class="project-info">
+            <h3>Projeto: Orion Restaurant</h3>
+            <p>Orion Restaurant é um site responsivo e interativo desenvolvido com HTML5, CSS3 e JavaScript puro, criado para destacar um restaurante fictício de forma atrativa e moderna. A página inicial exibe um carrossel de imagens dos pratos principais, acompanhado de efeitos de transição suaves em JavaScript para prender a atenção do visitante. As seções “Cardápio”, “Sobre Nós” e “Reservas” foram implementadas com design mobile-first, garantindo perfeita adaptação em celular e desktop.</p>
+            <div class="project-links">
+              <a href="https://g05th.github.io/meu_portfolio_front_end/landing-page/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Ver Demo</a>
+              <a href="https://github.com/G05th/meu_portfolio_front_end/tree/main/landing-page" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Ver Código</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="javascript">
+          <img src="assets/imagens/projecto2.png" alt="Projeto 2" class="project-thumb lazy" data-src="assets/imagens/projecto2.png">
+          <div class="project-info">
+            <h3>Projeto: Todo List</h3>
+            <p>A Todo List é um aplicativo web responsivo e intuitivo, desenvolvido com HTML5, CSS3 e JavaScript puro. O usuário pode adicionar, editar e remover tarefas facilmente, além de marcá-las como concluídas com um clique. Cada ação é acompanhada por animações sutis em CSS para realçar feedback visual (por exemplo, transições suaves ao riscar itens concluídos).</p>
+            <div class="project-links">
+              <a href=" https://g05th.github.io/meu_portfolio_front_end/todo-app/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Ver Demo</a>
+              <a href="https://github.com/G05th/meu_portfolio_front_end/tree/main/todo-app" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Ver Código</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="ux-ui">
+          <img src="assets/imagens/projecto3.png" alt="Projeto 3" class="project-thumb lazy" data-src="assets/imagens/projecto3.png">
+          <div class="project-info">
+            <h3>Projeto: Newsletter Email Template</h3>
+            <p>Este projeto apresenta um modelo de newsletter responsivo e compatível com os principais clientes de e-mail, criado em HTML e CSS puro. O layout utiliza tabelas e estilos inline para garantir que as imagens, textos e botões sejam exibidos corretamente em webmails e aplicativos móveis.</p>
+            <div class="project-links">
+              <a href="https://g05th.github.io/meu_portfolio_front_end/email-template/newsletter.html" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Ver Demo</a>
+              <a href="https://github.com/G05th/meu_portfolio_front_end/tree/main/email-template" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Ver Código</a>
+            </div>
+          </div>
+        </div>
+        <!-- Continue adicionando cards conforme tiver mais projetos -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Depoimentos (Opcional) -->
+  <section id="testimonials" class="testimonials-section">
+    <div class="container">
+      <h2>Depoimentos</h2>
+      <div class="testimonial-carousel">
+        <div class="testimonial-item active">
+          <img src="assets/imagens/depo1.jpg" alt="Cliente 1" class="testimonial-img">
+          <blockquote>
+            “Excelente profissional! Entregou o projeto antes do prazo e com alta qualidade.”
+          </blockquote>
+          <p class="testimonial-author">Leandro Manuel, CEO CWHI</p>
+        </div>
+        <div class="testimonial-item">
+          <img src="assets/imagens/depo2.jpg" alt="Cliente 2" class="testimonial-img">
+          <blockquote>
+            “Grande atenção aos detalhes e comunicação impecável durante todo o processo.”
+          </blockquote>
+          <p class="testimonial-author"> José Candomba, CTO UpgradeTech</p>
+        </div>
+        <!-- Adicione mais itens conforme necessário -->
+        <button class="testimonial-prev" aria-label="Anterior">&lt;</button>
+        <button class="testimonial-next" aria-label="Próximo">&gt;</button>
+        <div class="testimonial-dots">
+          <span class="dot active" data-index="0"></span>
+          <span class="dot" data-index="1"></span>
+          <!-- ... -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Contato -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2>Contato</h2>
+      <form action="https://formsubmit.co/germanochita27@gmail.com" method="POST" id="contact-form">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://g05th.github.io/meu_portfolio_front_end/index.html.html">
+        <div class="form-group">
+          <input type="text" id="name" name="name" required>
+          <label for="name">Nome</label>
+          <small class="error-message"></small>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" name="email" required>
+          <label for="email">E-mail</label>
+          <small class="error-message"></small>
+        </div>
+        <div class="form-group">
+          <input type="text" id="subject" name="subject" required>
+          <label for="subject">Assunto</label>
+          <small class="error-message"></small>
+        </div>
+        <div class="form-group">
+          <textarea id="message" name="message" rows="4" required></textarea>
+          <label for="message">Mensagem</label>
+          <small class="error-message"></small>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+      </form>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/germano-jo%C3%A3o-563542311/" target="_blank" aria-label="LinkedIn"><img src="assets/icons/linkedin.svg" alt="LinkedIn"></a>
+        <a href="https://github.com/G05th" target="_blank" aria-label="GitHub"><img src="assets/icons/github.svg" alt="GitHub"></a>
+        <a href="https://www.behance.net/germanochita" target="_blank" aria-label="Behance"><img src="assets/icons/behance.svg" alt="Behance"></a>
+        <a href="https://www.instagram.com/_ghost_sickle/" target="_blank" aria-label="Instagram"><img src="assets/icons/instagram.svg" alt="Instagram"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-section">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4>Links Rápidos</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">Sobre</a></li>
+          <li><a href="#projects">Projetos</a></li>
+          <li><a href="#contact">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Redes Sociais</h4>
+        <div class="footer-social-icons">
+          <a href="https://www.linkedin.com/in/germano-jo%C3%A3o-563542311/" target="_blank" aria-label="LinkedIn"><img src="assets/icons/linkedin.svg" alt="LinkedIn"></a>
+        <a href="https://github.com/G05th" target="_blank" aria-label="GitHub"><img src="assets/icons/github.svg" alt="GitHub"></a>
+        <a href="https://www.behance.net/germanochita" target="_blank" aria-label="Behance"><img src="assets/icons/behance.svg" alt="Behance"></a>
+        <a href="https://www.instagram.com/_ghost_sickle/" target="_blank" aria-label="Instagram"><img src="assets/icons/instagram.svg" alt="Instagram"></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>© 2025 Germano Chita João</h4>
+        <p>Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal de Sucesso (inicialmente oculto) -->
+  <div id="success-modal" class="modal hidden">
+    <div class="modal-content">
+      <span id="modal-close" class="modal-close">&times;</span>
+      <p>Obrigado pela mensagem! Em breve entrarei em contato.</p>
+    </div>
+  </div>
+
+  <!-- Scripts JS -->
+  <script src="js/helpers.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
