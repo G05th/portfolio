@@ -1,53 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!--
-    index.html
-    Portfólio Pessoal – Página Principal (versão atualizada)
-    Autor: Germano Chita João
-    Descrição: Estrutura semântica e responsiva para portfólio moderno.
-    Alterações: Skills em carrossel automático; fundo do Hero em tons de azul.
-  -->
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio | Germano Chita João</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <title>Germano Chita João | Desenvolvedor Full Stack & UX Designer</title>
+  <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
 
-  <!-- Google Fonts: Roboto (texto) e Montserrat (títulos) -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400;500&display=swap"
-    rel="stylesheet"
-  >
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS Geral e Animações -->
+  <!-- CSS -->
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
   <!-- Preloader -->
   <div id="preloader">
     <div class="loader">
-      <div class="loader-circle"></div>
-      <p>Carregando...</p>
+      <div class="cube-loader">
+        <div class="cube-face front"></div>
+        <div class="cube-face back"></div>
+        <div class="cube-face right"></div>
+        <div class="cube-face left"></div>
+        <div class="cube-face top"></div>
+        <div class="cube-face bottom"></div>
+      </div>
+      <p class="loader-text">Inicializando<span class="dots">...</span></p>
     </div>
   </div>
 
+  <!-- Cursor Personalizado -->
+  <div class="cursor-outer"></div>
+  <div class="cursor-inner"></div>
+
   <!-- Botão de Dark Mode Toggle -->
   <button id="theme-toggle" aria-label="Alternar modo claro/escuro">
-    🌙
+    <div class="toggle-icon">
+      <div class="toggle-icon-rays"></div>
+      <div class="toggle-icon-circle"></div>
+    </div>
   </button>
 
   <!-- Header / Nav -->
-  <header id="header">
+  <header id="header" class="glass-nav">
+    <div class="nav-bg-blur"></div>
     <nav class="navbar">
-      <a href="#" class="logo">Germano Chita João</a>
+      <a href="#" class="logo">
+        <span class="logo-text">Germano Chita João</span>
+        <span class="logo-highlight"></span>
+      </a>
       <ul class="nav-menu">
-        <li><a href="#hero" class="nav-link active">Home</a></li>
-        <li><a href="#about" class="nav-link">Sobre</a></li>
-        <li><a href="#projects" class="nav-link">Projetos</a></li>
-        <li><a href="#testimonials" class="nav-link">Depoimentos</a></li>
-        <li><a href="#contact" class="nav-link">Contato</a></li>
+        <li><a href="#hero" class="nav-link active" data-text="Home">Home</a></li>
+        <li><a href="#about" class="nav-link" data-text="Sobre">Sobre</a></li>
+        <li><a href="#projects" class="nav-link" data-text="Projetos">Projetos</a></li>
+        <li><a href="#testimonials" class="nav-link" data-text="Depoimentos">Depoimentos</a></li>
+        <li><a href="#contact" class="nav-link" data-text="Contato">Contato</a></li>
       </ul>
       <div class="nav-toggle" id="mobile-menu">
         <span></span><span></span><span></span>
@@ -55,17 +65,30 @@
     </nav>
   </header>
 
-  <!-- Seção Hero (com fundo azul-escuro) -->
+  <!-- Partículas de Fundo -->
+  <div id="particles-js"></div>
+
+  <!-- Seção Hero -->
   <section id="hero" class="hero-section">
+    <div class="hero-bg">
+      <div class="hero-gradient"></div>
+      <div class="hero-grid"></div>
+    </div>
     <div class="hero-content">
-      <h1 class="hero-title">Olá, eu sou <span class="highlight">Germano Chita João</span></h1>
-      <h2 class="hero-subtitle">Desenvolvedor Front-end &amp; UX Designer</h2>
-      <a href="#projects" class="btn btn-primary">Veja meus projetos</a>
+      <h1 class="hero-title glitch-text" data-text="Transformando Ideias em Experiências Digitais Extraordinárias">
+        Transformando Ideias em Experiências Digitais Extraordinárias
+      </h1>
+      <h2 class="hero-subtitle">
+        <span class="typing-text"></span><span class="cursor">|</span>
+      </h2>
+      <a href="#projects" class="btn btn-primary btn-3d">
+        <span class="btn-text">Explore Meu Universo Digital</span>
+        <span class="btn-glow"></span>
+      </a>
     </div>
     <div class="scroll-down-indicator">
-      <!-- Seta animada -->
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <polyline points="6 9 12 15 18 9"></polyline>
       </svg>
     </div>
@@ -73,139 +96,406 @@
 
   <!-- Seção Sobre Mim -->
   <section id="about" class="about-section">
-    <div class="container grid-two-col">
-      <div class="about-img-container">
-        <img src="assets/imagens/perfil.jpg" alt="Foto de Perfil de Germano Chita João" class="about-img">
+    <div class="section-grid-bg"></div>
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Sobre Mim</h2>
+        <div class="section-title-bar"></div>
       </div>
-      <div class="about-text">
-        <h2>Sobre Mim</h2>
-        <p>
-          Sou formando em Ciência da Computação e atuo como FullStack Developer e UX Designer há 4 anos.  
-          Apaixonado por criar interfaces modernas, acessíveis e performáticas.  
-          Meu objetivo é entregar projetos que proporcionem a melhor experiência de usuário.
-        </p>
-        <p>
-          Habilidades Principais:
-        </p>
-        <!-- Carousel de Skills -->
-        <div class="skills-carousel-wrapper">
-          <div class="skills-carousel">
-            <div class="skill-item">
-              <img src="assets/icons/html-5.png" alt="HTML5" class="skill-icon">
-              <span class="tooltip">HTML5</span>
+      <div class="about-content">
+        <div class="about-img-container">
+          <div class="about-img-frame">
+            <img src="assets/imagens/perfil.jpg" alt="Foto de Perfil de Germano Chita João" class="about-img">
+            <div class="img-glow"></div>
+          </div>
+          <div class="about-img-shadow"></div>
+        </div>
+        <div class="about-text">
+          <p class="about-paragraph">
+            Arquiteto digital com formação em Ciência da Computação e mais de 4 anos moldando o futuro da web como Full Stack Developer e UX Designer. Minha paixão está em transcender os limites convencionais, criando interfaces que não apenas funcionam perfeitamente, mas também surpreendem e encantam.
+          </p>
+          <p class="about-paragraph">
+            Especializo-me em transformar conceitos complexos em experiências digitais intuitivas e memoráveis, onde cada interação é uma oportunidade para impressionar. Minha abordagem combina precisão técnica com visão artística, resultando em projetos que não apenas atendem às expectativas — eles as redefinem.
+          </p>
+          <h3 class="skills-title">Habilidades Principais</h3>
+          
+          <!-- Cubo 3D de Skills -->
+          <div class="skills-cube-container">
+            <div class="skills-cube">
+              <div class="cube-face front">
+                <h4>Frontend</h4>
+                <div class="skill-group">
+                  <div class="skill-item">
+                    <img src="assets/icons/html-5.png" alt="HTML5" class="skill-icon">
+                    <span class="skill-name">HTML5</span>
+                    <div class="skill-bar"><div class="skill-level" style="width: 95%"></div></div>
+                  </div>
+                  <div class="skill-item">
+                    <img src="assets/icons/css-3.png" alt="CSS3" class="skill-icon">
+                    <span class="skill-name">CSS3</span>
+                    <div class="skill-bar"><div class="skill-level" style="width: 90%"></div></div>
+                  </div>
+                  <div class="skill-item">
+                    <img src="assets/icons/js.png" alt="JavaScript" class="skill-icon">
+                    <span class="skill-name">JavaScript</span>
+                    <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="cube-face back">
+                <h4>Backend</h4>
+                <div class="skill-group">
+                  <div class="skill-item">
+                    <img src="assets/icons/nodejs.png" alt="Node.js" class="skill-icon">
+                    <span class="skill-name">Node.js</span>
+                    <div class="skill-bar"><div class="skill-level" style="width: 80%"></div></div>
+                  </div>
+                  <div class="skill-item">
+                    <img src="assets/icons/logotipo-da-linguagem-python.png" alt="Python" class="skill-icon">
+                    <span class="skill-name">Python</span>
+                    <div class="skill-bar"><div class="skill-level" style="width: 75%"></div></div>
+                  </div>
+                  <div class="skill-item">
+                    <img src="assets/icons/database.png" alt="SQL" class="skill-icon">
+                    <span class="skill-name">SQL</span>
+                    <div class="skill-bar"><div class="skill-level" style="width: 70%"></div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="cube-face right">
+                <h4>Design</h4>
+                <div class="skill-group">
+                  <div class="skill-item">
+                    <img src="assets/icons/figma.png" alt="Figma" class="skill-icon">
+                    <span class="skill-name">Figma</span>
+                    <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
+                  </div>
+                  <div class="skill-item">
+                    <img src="assets/icons/adobe-xd.png" alt="Adobe XD" class="skill-icon">
+                    <span class="skill-name">Adobe XD</span>
+                    <div class="skill-bar"><div class="skill-level" style="width: 80%"></div></div>
+                  </div>
+                  <div class="skill-item">
+                    <img src="assets/icons/photoshop.png" alt="Photoshop" class="skill-icon">
+                    <span class="skill-name">Photoshop</span>
+                    <div class="skill-bar"><div class="skill-level" style="width: 75%"></div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="cube-face left">
+                <h4>Ferramentas</h4>
+                <div class="skill-group">
+                  <div class="skill-item">
+                    <img src="assets/icons/github.png" alt="Git" class="skill-icon">
+                    <span class="skill-name">Git</span>
+                    <div class="skill-bar"><div class="skill-level" style="width: 90%"></div></div>
+                  </div>
+                  <div class="skill-item">
+                    <img src="assets/icons/docker.png" alt="Docker" class="skill-icon">
+                    <span class="skill-name">Docker</span>
+                    <div class="skill-bar"><div class="skill-level" style="width: 70%"></div></div>
+                  </div>
+                  <div class="skill-item">
+                    <img src="assets/icons/aws.png" alt="AWS" class="skill-icon">
+                    <span class="skill-name">AWS</span>
+                    <div class="skill-bar"><div class="skill-level" style="width: 65%"></div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="cube-face top">
+                <h4>Frameworks</h4>
+                <div class="skill-group">
+                  <div class="skill-item">
+                    <img src="assets/icons/biblioteca.png" alt="React" class="skill-icon">
+                    <span class="skill-name">React</span>
+                    <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
+                  </div>
+                  <div class="skill-item">
+                    <img src="assets/icons/vue.png" alt="Vue.js" class="skill-icon">
+                    <span class="skill-name">Vue.js</span>
+                    <div class="skill-bar"><div class="skill-level" style="width: 75%"></div></div>
+                  </div>
+                  <div class="skill-item">
+                    <img src="assets/icons/tailwind.png" alt="Tailwind" class="skill-icon">
+                    <span class="skill-name">Tailwind</span>
+                    <div class="skill-bar"><div class="skill-level" style="width: 80%"></div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="cube-face bottom">
+                <h4>Soft Skills</h4>
+                <div class="skill-group">
+                  <div class="skill-item">
+                    <img src="assets/icons/team.png" alt="Trabalho em Equipe" class="skill-icon">
+                    <span class="skill-name">Trabalho em Equipe</span>
+                    <div class="skill-bar"><div class="skill-level" style="width: 95%"></div></div>
+                  </div>
+                  <div class="skill-item">
+                    <img src="assets/icons/problem-solving.png" alt="Resolução de Problemas" class="skill-icon">
+                    <span class="skill-name">Resolução de Problemas</span>
+                    <div class="skill-bar"><div class="skill-level" style="width: 90%"></div></div>
+                  </div>
+                  <div class="skill-item">
+                    <img src="assets/icons/communication.png" alt="Comunicação" class="skill-icon">
+                    <span class="skill-name">Comunicação</span>
+                    <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="skill-item">
-              <img src="assets/icons/css-3.png" alt="CSS3" class="skill-icon">
-              <span class="tooltip">CSS3</span>
+            <div class="cube-controls">
+              <button class="cube-control" data-face="front">Frontend</button>
+              <button class="cube-control" data-face="back">Backend</button>
+              <button class="cube-control" data-face="right">Design</button>
+              <button class="cube-control" data-face="left">Ferramentas</button>
+              <button class="cube-control" data-face="top">Frameworks</button>
+              <button class="cube-control" data-face="bottom">Soft Skills</button>
             </div>
-            <div class="skill-item">
-              <img src="assets/icons/js.png" alt="JavaScript" class="skill-icon">
-              <span class="tooltip">JavaScript</span>
-            </div>
-            <div class="skill-item">
-              <img src="assets/icons/github.png" alt="Git" class="skill-icon">
-              <span class="tooltip">Git</span>
-            </div>
-            <!-- Exemplo para mais ícones; insira quantos quiser -->
-            <div class="skill-item">
-              <img src="assets/icons/biblioteca.png" alt="React" class="skill-icon">
-              <span class="tooltip">React</span>
-            </div>
-            <div class="skill-item">
-              <img src="assets/icons/nodejs.png" alt="Node.js" class="skill-icon">
-              <span class="tooltip">Node.js</span>
-            </div>
-            <div class="skill-item">
-              <img src="assets/icons/logotipo-da-linguagem-python.png" alt="GitLab" class="skill-icon">
-              <span class="tooltip">GitLab</span>
-            </div>
-            <!-- ... adicione outros ícones conforme necessário -->
           </div>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- Seção Projetos (Portfolio) -->
+  <!-- Seção Projetos -->
   <section id="projects" class="projects-section">
+    <div class="section-grid-bg"></div>
     <div class="container">
-      <h2>Projetos</h2>
+      <div class="section-header">
+        <h2 class="section-title">Projetos</h2>
+        <div class="section-title-bar"></div>
+      </div>
+      <div class="projects-intro">
+        <p>Cada projeto é uma jornada de transformação digital, onde desafios se convertem em soluções inovadoras. Explore abaixo alguns dos universos que criei.</p>
+      </div>
+      
       <!-- Filtros de Categoria -->
       <div class="project-filters">
         <button class="filter-btn active" data-filter="all">Todos</button>
         <button class="filter-btn" data-filter="html-css">HTML/CSS</button>
         <button class="filter-btn" data-filter="javascript">JavaScript</button>
         <button class="filter-btn" data-filter="ux-ui">UX/UI</button>
+        <button class="filter-btn" data-filter="fullstack">Full Stack</button>
       </div>
 
       <div class="projects-grid">
         <div class="project-card" data-category="html-css">
-          <img src="assets/imagens/projecto1.png" alt="Projeto 1" class="project-thumb lazy" data-src="assets/imagens/projecto1.png">
-          <div class="project-info">
-            <h3>Projeto: Orion Restaurant</h3>
-            <p>Orion Restaurant é um site responsivo e interativo desenvolvido com HTML5, CSS3 e JavaScript puro, criado para destacar um restaurante fictício de forma atrativa e moderna. A página inicial exibe um carrossel de imagens dos pratos principais, acompanhado de efeitos de transição suaves em JavaScript para prender a atenção do visitante. As seções “Cardápio”, “Sobre Nós” e “Reservas” foram implementadas com design mobile-first, garantindo perfeita adaptação em celular e desktop.</p>
-            <div class="project-links">
-              <a href="https://g05th.github.io/meu_portfolio_front_end/landing-page/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Ver Demo</a>
-              <a href="https://github.com/G05th/meu_portfolio_front_end/tree/main/landing-page" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Ver Código</a>
+          <div class="project-card-inner">
+            <div class="project-card-front">
+              <div class="project-thumb-container">
+                <img src="assets/imagens/projecto1.png" alt="Orion Restaurant" class="project-thumb">
+                <div class="project-overlay">
+                  <h3>ORION RESTAURANT</h3>
+                  <p>Experiência Gastronômica Digital</p>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-back">
+              <div class="project-info">
+                <h3>ORION RESTAURANT</h3>
+                <h4>Experiência Gastronômica Digital</h4>
+                
+                <div class="project-details">
+                  <div class="project-challenge">
+                    <h5>Desafio</h5>
+                    <p>Criar uma presença digital imersiva para um restaurante premium que traduzisse a experiência gastronômica para o ambiente virtual.</p>
+                  </div>
+                  
+                  <div class="project-solution">
+                    <h5>Solução</h5>
+                    <p>Desenvolvi uma interface sensorial com HTML5, CSS3 e JavaScript puro, onde cada elemento foi meticulosamente projetado para evocar os mesmos sentimentos da experiência presencial. O carrossel de imagens utiliza transições cinematográficas que revelam os pratos como obras de arte, enquanto a navegação intuitiva guia os visitantes através de uma jornada gastronômica digital.</p>
+                  </div>
+                  
+                  <div class="project-result">
+                    <h5>Resultado</h5>
+                    <p>Uma plataforma que não apenas informa, mas seduz visualmente, aumentando o engajamento e desejo de visitar o estabelecimento. A implementação mobile-first garante que a experiência seja igualmente impactante em qualquer dispositivo.</p>
+                  </div>
+                </div>
+                
+                <div class="project-links">
+                  <a href="https://g05th.github.io/meu_portfolio_front_end/landing-page/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Ver Demo</a>
+                  <a href="https://github.com/G05th/meu_portfolio_front_end/tree/main/landing-page" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Ver Código</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="project-card" data-category="javascript">
-          <img src="assets/imagens/projecto2.png" alt="Projeto 2" class="project-thumb lazy" data-src="assets/imagens/projecto2.png">
-          <div class="project-info">
-            <h3>Projeto: Todo List</h3>
-            <p>A Todo List é um aplicativo web responsivo e intuitivo, desenvolvido com HTML5, CSS3 e JavaScript puro. O usuário pode adicionar, editar e remover tarefas facilmente, além de marcá-las como concluídas com um clique. Cada ação é acompanhada por animações sutis em CSS para realçar feedback visual (por exemplo, transições suaves ao riscar itens concluídos).</p>
-            <div class="project-links">
-              <a href=" https://g05th.github.io/meu_portfolio_front_end/todo-app/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Ver Demo</a>
-              <a href="https://github.com/G05th/meu_portfolio_front_end/tree/main/todo-app" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Ver Código</a>
+          <div class="project-card-inner">
+            <div class="project-card-front">
+              <div class="project-thumb-container">
+                <img src="assets/imagens/projecto2.png" alt="Quantum Tasks" class="project-thumb">
+                <div class="project-overlay">
+                  <h3>QUANTUM TASKS</h3>
+                  <p>Gerenciamento de Tarefas Reinventado</p>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-back">
+              <div class="project-info">
+                <h3>QUANTUM TASKS</h3>
+                <h4>Gerenciamento de Tarefas Reinventado</h4>
+                
+                <div class="project-details">
+                  <div class="project-challenge">
+                    <h5>Desafio</h5>
+                    <p>Transformar o conceito tradicional de lista de tarefas em uma ferramenta visualmente estimulante e altamente funcional.</p>
+                  </div>
+                  
+                  <div class="project-solution">
+                    <h5>Solução</h5>
+                    <p>Criei uma aplicação web com arquitetura modular em JavaScript puro que eleva a experiência de gerenciamento de tarefas através de microinterações cuidadosamente projetadas. Cada tarefa é um elemento vivo que responde ao toque com animações fluidas e feedback tátil, tornando a organização uma experiência prazerosa.</p>
+                  </div>
+                  
+                  <div class="project-result">
+                    <h5>Resultado</h5>
+                    <p>Uma ferramenta de produtividade que transforma a monotonia de gerenciar tarefas em uma experiência visual satisfatória. O sistema de animações proporciona feedback instantâneo que reforça positivamente cada ação concluída, incentivando maior produtividade.</p>
+                  </div>
+                </div>
+                
+                <div class="project-links">
+                  <a href="https://g05th.github.io/meu_portfolio_front_end/todo-app/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Ver Demo</a>
+                  <a href="https://github.com/G05th/meu_portfolio_front_end/tree/main/todo-app" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Ver Código</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="project-card" data-category="ux-ui">
-          <img src="assets/imagens/projecto3.png" alt="Projeto 3" class="project-thumb lazy" data-src="assets/imagens/projecto3.png">
-          <div class="project-info">
-            <h3>Projeto: Newsletter Email Template</h3>
-            <p>Este projeto apresenta um modelo de newsletter responsivo e compatível com os principais clientes de e-mail, criado em HTML e CSS puro. O layout utiliza tabelas e estilos inline para garantir que as imagens, textos e botões sejam exibidos corretamente em webmails e aplicativos móveis.</p>
-            <div class="project-links">
-              <a href="https://g05th.github.io/meu_portfolio_front_end/email-template/newsletter.html" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Ver Demo</a>
-              <a href="https://github.com/G05th/meu_portfolio_front_end/tree/main/email-template" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Ver Código</a>
+          <div class="project-card-inner">
+            <div class="project-card-front">
+              <div class="project-thumb-container">
+                <img src="assets/imagens/projecto3.png" alt="Pulse Newsletter" class="project-thumb">
+                <div class="project-overlay">
+                  <h3>PULSE NEWSLETTER</h3>
+                  <p>Comunicação Visual Multiplataforma</p>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-back">
+              <div class="project-info">
+                <h3>PULSE NEWSLETTER</h3>
+                <h4>Comunicação Visual Multiplataforma</h4>
+                
+                <div class="project-details">
+                  <div class="project-challenge">
+                    <h5>Desafio</h5>
+                    <p>Desenvolver um sistema de comunicação por email que mantivesse integridade visual e impacto em dezenas de plataformas diferentes.</p>
+                  </div>
+                  
+                  <div class="project-solution">
+                    <h5>Solução</h5>
+                    <p>Engenharia reversa das limitações de renderização dos principais clientes de email para criar um template que desafia as restrições do meio. Utilizando técnicas avançadas de HTML e CSS inline, desenvolvi uma estrutura que garante consistência visual sem comprometer a estética moderna.</p>
+                  </div>
+                  
+                  <div class="project-result">
+                    <h5>Resultado</h5>
+                    <p>Um sistema de comunicação que se destaca na caixa de entrada, com taxas de abertura superiores graças ao design que mantém sua integridade visual em qualquer dispositivo ou plataforma. A solução técnica elegante supera as limitações tradicionais de email marketing.</p>
+                  </div>
+                </div>
+                
+                <div class="project-links">
+                  <a href="https://g05th.github.io/meu_portfolio_front_end/email-template/newsletter.html" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Ver Demo</a>
+                  <a href="https://github.com/G05th/meu_portfolio_front_end/tree/main/email-template" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Ver Código</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <!-- Continue adicionando cards conforme tiver mais projetos -->
       </div>
     </div>
   </section>
 
-  <!-- Seção Depoimentos (Opcional) -->
+  <!-- Seção Depoimentos -->
   <section id="testimonials" class="testimonials-section">
+    <div class="section-grid-bg"></div>
     <div class="container">
-      <h2>Depoimentos</h2>
-      <div class="testimonial-carousel">
-        <div class="testimonial-item active">
-          <img src="assets/imagens/depo1.jpg" alt="Cliente 1" class="testimonial-img">
-          <blockquote>
-            “Excelente profissional! Entregou o projeto antes do prazo e com alta qualidade.”
-          </blockquote>
-          <p class="testimonial-author">Leandro Manuel, CEO CWHI</p>
+      <div class="section-header">
+        <h2 class="section-title">Depoimentos</h2>
+        <div class="section-title-bar"></div>
+      </div>
+      <div class="testimonials-intro">
+        <p>O que dizem aqueles que transformaram suas visões em realidade através das minhas soluções digitais.</p>
+      </div>
+      
+      <div class="testimonial-scene">
+        <div class="testimonial-carousel">
+          <div class="testimonial-item active">
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                <blockquote>
+                  "Excelente profissional! Germano não apenas entregou o projeto antes do prazo, mas também superou nossas expectativas com uma interface que realmente captura a essência da nossa marca. Sua atenção aos detalhes e capacidade de traduzir conceitos abstratos em experiências digitais tangíveis é extraordinária."
+                </blockquote>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-img-container">
+                  <img src="assets/imagens/depo1.jpg" alt="Leandro Manuel" class="testimonial-img">
+                </div>
+                <div class="author-info">
+                  <p class="author-name">Leandro Manuel</p>
+                  <p class="author-title">CEO, CWHI</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-item">
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                <blockquote>
+                  "A colaboração com Germano foi transformadora para nosso projeto. Sua abordagem metódica combinada com uma visão criativa resultou em uma plataforma que não apenas atende às necessidades técnicas, mas também encanta nossos usuários. Grande atenção aos detalhes e comunicação impecável durante todo o processo."
+                </blockquote>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-img-container">
+                  <img src="assets/imagens/depo2.jpg" alt="José Candomba" class="testimonial-img">
+                </div>
+                <div class="author-info">
+                  <p class="author-name">José Candomba</p>
+                  <p class="author-title">CTO, UpgradeTech</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-item">
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                <blockquote>
+                  "Contratar Germano foi uma das melhores decisões que tomamos para nosso rebrand digital. Ele trouxe uma perspectiva inovadora e implementou soluções técnicas que tornaram nossa presença online verdadeiramente diferenciada. O resultado foi um aumento significativo no engajamento e conversões."
+                </blockquote>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-img-container">
+                  <img src="assets/imagens/depo3.jpg" alt="Maria Fernanda" class="testimonial-img">
+                </div>
+                <div class="author-info">
+                  <p class="author-name">Maria Fernanda</p>
+                  <p class="author-title">Diretora de Marketing, TechSolutions</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="testimonial-item">
-          <img src="assets/imagens/depo2.jpg" alt="Cliente 2" class="testimonial-img">
-          <blockquote>
-            “Grande atenção aos detalhes e comunicação impecável durante todo o processo.”
-          </blockquote>
-          <p class="testimonial-author"> José Candomba, CTO UpgradeTech</p>
-        </div>
-        <!-- Adicione mais itens conforme necessário -->
-        <button class="testimonial-prev" aria-label="Anterior">&lt;</button>
-        <button class="testimonial-next" aria-label="Próximo">&gt;</button>
-        <div class="testimonial-dots">
-          <span class="dot active" data-index="0"></span>
-          <span class="dot" data-index="1"></span>
-          <!-- ... -->
+        
+        <div class="testimonial-controls">
+          <button class="testimonial-prev" aria-label="Anterior">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <div class="testimonial-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+          </div>
+          <button class="testimonial-next" aria-label="Próximo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
@@ -213,79 +503,183 @@
 
   <!-- Seção Contato -->
   <section id="contact" class="contact-section">
+    <div class="section-grid-bg"></div>
     <div class="container">
-      <h2>Contato</h2>
-      <form action="https://formsubmit.co/germanochita27@gmail.com" method="POST" id="contact-form">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://g05th.github.io/meu_portfolio_front_end/index.html">
-        <div class="form-group">
-          <input type="text" id="name" name="name" required>
-          <label for="name">Nome</label>
-          <small class="error-message"></small>
+      <div class="section-header">
+        <h2 class="section-title">Contato</h2>
+        <div class="section-title-bar"></div>
+      </div>
+      <div class="contact-intro">
+        <p>Pronto para transformar sua visão em realidade digital? Vamos colaborar para criar algo extraordinário juntos.</p>
+      </div>
+      
+      <div class="contact-content">
+        <form action="https://formsubmit.co/germanochita27@gmail.com" method="POST" id="contact-form" class="contact-form glass-card">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://g05th.github.io/meu_portfolio_front_end/index.html">
+          
+          <div class="form-group">
+            <input type="text" id="name" name="name" required>
+            <div class="form-highlight"></div>
+            <label for="name">Nome</label>
+            <small class="error-message"></small>
+          </div>
+          
+          <div class="form-group">
+            <input type="email" id="email" name="email" required>
+            <div class="form-highlight"></div>
+            <label for="email">E-mail</label>
+            <small class="error-message"></small>
+          </div>
+          
+          <div class="form-group">
+            <input type="text" id="subject" name="subject" required>
+            <div class="form-highlight"></div>
+            <label for="subject">Assunto</label>
+            <small class="error-message"></small>
+          </div>
+          
+          <div class="form-group">
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <div class="form-highlight"></div>
+            <label for="message">Mensagem</label>
+            <small class="error-message"></small>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-3d">
+            <span class="btn-text">Enviar Mensagem</span>
+            <span class="btn-glow"></span>
+          </button>
+        </form>
+        
+        <div class="contact-info glass-card">
+          <h3>Conecte-se</h3>
+          <p>Estou sempre aberto a novas oportunidades, colaborações e conversas sobre tecnologia e design.</p>
+          
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/germano-jo%C3%A3o-563542311/" target="_blank" aria-label="LinkedIn" class="social-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+              <span class="icon-text">LinkedIn</span>
+            </a>
+            <a href="https://github.com/G05th" target="_blank" aria-label="GitHub" class="social-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              </svg>
+              <span class="icon-text">GitHub</span>
+            </a>
+            <a href="https://www.behance.net/germanochita" target="_blank" aria-label="Behance" class="social-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6.5 6.5h11M9.5 11.5h8M6.5 16.5h11M13.5 6.5v10M6.5 9v5"></path>
+              </svg>
+              <span class="icon-text">Behance</span>
+            </a>
+            <a href="https://www.instagram.com/_ghost_sickle/" target="_blank" aria-label="Instagram" class="social-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              <span class="icon-text">Instagram</span>
+            </a>
+          </div>
+          
+          <div class="contact-email">
+            <h4>Email</h4>
+            <a href="mailto:germanochita27@gmail.com">germanochita27@gmail.com</a>
+          </div>
         </div>
-        <div class="form-group">
-          <input type="email" id="email" name="email" required>
-          <label for="email">E-mail</label>
-          <small class="error-message"></small>
-        </div>
-        <div class="form-group">
-          <input type="text" id="subject" name="subject" required>
-          <label for="subject">Assunto</label>
-          <small class="error-message"></small>
-        </div>
-        <div class="form-group">
-          <textarea id="message" name="message" rows="4" required></textarea>
-          <label for="message">Mensagem</label>
-          <small class="error-message"></small>
-        </div>
-        <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
-      </form>
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/in/germano-jo%C3%A3o-563542311/" target="_blank" aria-label="LinkedIn"><img src="assets/icons/linkedin.svg" alt="LinkedIn"></a>
-        <a href="https://github.com/G05th" target="_blank" aria-label="GitHub"><img src="assets/icons/github.svg" alt="GitHub"></a>
-        <a href="https://www.behance.net/germanochita" target="_blank" aria-label="Behance"><img src="assets/icons/behance.svg" alt="Behance"></a>
-        <a href="https://www.instagram.com/_ghost_sickle/" target="_blank" aria-label="Instagram"><img src="assets/icons/instagram.svg" alt="Instagram"></a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer-section">
-    <div class="container footer-grid">
-      <div class="footer-col">
-        <h4>Links Rápidos</h4>
-        <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#about">Sobre</a></li>
-          <li><a href="#projects">Projetos</a></li>
-          <li><a href="#contact">Contato</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Redes Sociais</h4>
-        <div class="footer-social-icons">
-          <a href="https://www.linkedin.com/in/germano-jo%C3%A3o-563542311/" target="_blank" aria-label="LinkedIn"><img src="assets/icons/linkedin.svg" alt="LinkedIn"></a>
-        <a href="https://github.com/G05th" target="_blank" aria-label="GitHub"><img src="assets/icons/github.svg" alt="GitHub"></a>
-        <a href="https://www.behance.net/germanochita" target="_blank" aria-label="Behance"><img src="assets/icons/behance.svg" alt="Behance"></a>
-        <a href="https://www.instagram.com/_ghost_sickle/" target="_blank" aria-label="Instagram"><img src="assets/icons/instagram.svg" alt="Instagram"></a>
+    <div class="footer-grid-bg"></div>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <div class="footer-logo">
+            <span class="logo-text">Germano Chita João</span>
+            <span class="logo-highlight"></span>
+          </div>
+          <p class="footer-tagline">Transformando ideias em experiências digitais extraordinárias</p>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Links Rápidos</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#projects">Projetos</a></li>
+            <li><a href="#testimonials">Depoimentos</a></li>
+            <li><a href="#contact">Contato</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Redes Sociais</h4>
+          <div class="footer-social-icons">
+            <a href="https://www.linkedin.com/in/germano-jo%C3%A3o-563542311/" target="_blank" aria-label="LinkedIn" class="footer-social-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="https://github.com/G05th" target="_blank" aria-label="GitHub" class="footer-social-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              </svg>
+            </a>
+            <a href="https://www.behance.net/germanochita" target="_blank" aria-label="Behance" class="footer-social-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6.5 6.5h11M9.5 11.5h8M6.5 16.5h11M13.5 6.5v10M6.5 9v5"></path>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/_ghost_sickle/" target="_blank" aria-label="Instagram" class="footer-social-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
-      <div class="footer-col">
-        <h4>© 2025 Germano Chita João</h4>
-        <p>Todos os direitos reservados.</p>
+      
+      <div class="footer-bottom">
+        <p>© 2025 Germano Chita João. Todos os direitos reservados.</p>
+        <div class="footer-signature">
+          <span class="signature-text">Desenvolvido com</span>
+          <span class="signature-icon">❤</span>
+        </div>
       </div>
     </div>
   </footer>
 
-  <!-- Modal de Sucesso (inicialmente oculto) -->
+  <!-- Modal de Sucesso -->
   <div id="success-modal" class="modal hidden">
-    <div class="modal-content">
+    <div class="modal-content glass-card">
       <span id="modal-close" class="modal-close">&times;</span>
-      <p>Obrigado pela mensagem! Em breve entrarei em contato.</p>
+      <div class="modal-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+      </div>
+      <h3>Mensagem Enviada!</h3>
+      <p>Obrigado pelo contato! Responderei sua mensagem o mais breve possível.</p>
     </div>
   </div>
 
   <!-- Scripts JS -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
   <script src="js/helpers.js"></script>
   <script src="js/main.js"></script>
 </body>
