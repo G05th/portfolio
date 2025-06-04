@@ -596,6 +596,7 @@ body:hover .cursor-inner {
   overflow: hidden;
   transform-style: preserve-3d;
   animation: float 6s ease-in-out infinite;
+  opacity: 1 !important;
 }
 
 .about-img {
