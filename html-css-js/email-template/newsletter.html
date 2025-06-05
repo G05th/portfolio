@@ -24,24 +24,23 @@
       border: 0;
     }
     /* Container do botão e tooltip */
-.tooltip-container {
+    .tooltip-container {
   position: fixed;
-  bottom: 20px;
+  bottom: 140px;
   right: 20px;
-  z-index: 1000;
+  z-index: 900;
 }
 
-/* Botão flutuante */
 .floating-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   background-color: #007bff;
   border-radius: 50%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: var(--transition);
   text-decoration: none;
 }
 
@@ -51,15 +50,14 @@
 }
 
 .ghost-icon {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
 }
 
-/* Tooltip */
 .tooltip-text {
   visibility: hidden;
   position: absolute;
-  bottom: 70px;
+  bottom: 60px;
   right: 0;
   background-color: #333;
   color: #fff;
@@ -134,7 +132,7 @@
     </tr>
   </table>
   <div class="tooltip-container">
-    <a href="https://g05th.github.io/meu_portfolio_front_end/index.html" class="floating-btn">
+    <a href="https://g05th.github.io/portfolio/index.html" class="floating-btn" target="_blank" rel="noopener">
       <img src="mini_ghost.png" alt="logo ghost" class="ghost-icon" />
     </a>
     <span class="tooltip-text">Voltar ao portfólio</span>
