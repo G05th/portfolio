@@ -1,0 +1,53 @@
+# Node modules
+node_modules/
+
+# Output do build (Vite ou CRA)
+dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Editor (VS Code, JetBrains, etc.)
+.vscode/
+.idea/
+
+# Ambiente local
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Cache
+.cache/
+.next/
+out/
+.eslintcache
+
+# Coverage de testes
+coverage/
+
+# Arquivos temporários
+*.log
+*.tmp
+*.swp
+*.swo
+*.bak
+*.old
+
+# Arquivos de lock (caso você queira ignorar um deles)
+# Se estiver usando apenas `npm`, pode manter `package-lock.json`
+# Se estiver usando yarn, mantenha `yarn.lock`
+# Se usar pnpm, mantenha `pnpm-lock.yaml`
+# Remova os que não usa:
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
