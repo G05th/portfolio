@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ORION RESTAURANT - Descubra o melhor sabor de Luanda com nossa gastronomia exclusiva. Promoção de inauguração com 40% de desconto!" />
+  <meta name="keywords" content="restaurante luanda, gastronomia angola, orion restaurant, melhor restaurante, reservas restaurante" />
+  <link rel="shortcut icon" href="./favicon/logo.ico" type="image/x-icon">
+  <title>ORION RESTAURANT | Gastronomia Exclusiva em Luanda</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+  <!-- AOS para animações -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- Schema.org para SEO Local -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "ORION RESTAURANT",
+      "image": "img/restaurante.jpg",
+      "url": "https://orionrestaurant.ao",
+      "telephone": "+244 923 456 789",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Avenida 4 de Fevereiro",
+        "addressLocality": "Luanda",
+        "addressRegion": "Luanda",
+        "postalCode": "1000",
+        "addressCountry": "AO"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -8.8383333,
+        "longitude": 13.2344444
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "12:00",
+          "closes": "23:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "12:00",
+          "closes": "22:00"
+        }
+      ],
+      "servesCuisine": ["Angolana", "Internacional"],
+      "priceRange": "$$"
+    }
+  </script>
+</head>
+<body>
+  <!-- Header / Hero Section com Carrossel -->
+  <header class="hero" data-parallax>
+    <nav class="navbar">
+      <a href="#" class="logo">
+        <span>ORION RESTAURANT</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#sobre" aria-label="Sobre nós">Sobre</a></li>
+        <li><a href="#menu" aria-label="Nosso cardápio">Cardápio</a></li>
+        <li><a href="#horarios" aria-label="Horários de funcionamento">Horários</a></li>
+        <li><a href="#contato" aria-label="Entre em contato">Contato</a></li>
+        <li class="social-mobile">
+          <a href="https://instagram.com/orionrestaurant" target="_blank" rel="noopener" aria-label="Siga-nos no Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://facebook.com/orionrestaurant" target="_blank" rel="noopener" aria-label="Curta nossa página no Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/244923456789" target="_blank" rel="noopener" aria-label="Contate-nos pelo WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </li>
+      </ul>
+      <button class="btn-menu" id="btn-menu" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </nav>
+    <div class="hero-slider">
+      <div class="hero-slide active" style="background-image: url('img/hero1.jpg');">
+        <div class="hero-content" data-aos="fade-up">
+          <h1>Descubra o Melhor Sabor de Luanda</h1>
+          <p>Promoção de inauguração: 40% de desconto neste mês!</p>
+          <div class="hero-buttons">
+            <a href="#menu" class="btn-primary">Ver Cardápio</a>
+            <a href="#" id="open-modal-hero" class="btn-secondary">Reservar Mesa</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-slide" style="background-image: url('img/hero2.jpg');">
+        <div class="hero-content" data-aos="fade-up">
+          <h1>Pratos Feitos com Paixão</h1>
+          <p>Aproveite nossas especialidades!</p>
+          <div class="hero-buttons">
+            <a href="#menu" class="btn-primary">Explorar</a>
+            <a href="#" id="open-modal-hero2" class="btn-secondary">Reservar Mesa</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="slider-prev" aria-label="Slide anterior"><i class="fas fa-chevron-left"></i></button>
+    <button class="slider-next" aria-label="Próximo slide"><i class="fas fa-chevron-right"></i></button>
+    <div class="scroll-indicator">
+      <span>Deslize para baixo</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </header>
+
+  <!-- Sobre -->
+  <section id="sobre" class="sobre" data-aos="fade-up">
+    <div class="container">
+      <div class="section-header">
+        <h2>Sobre Nós</h2>
+        <div class="divider"><span></span></div>
+      </div>
+      <div class="sobre-content">
+        <div class="sobre-text">
+          <p>
+            No <strong>ORION RESTAURANT</strong>, unimos qualidade e tradição. Há mais de 10 anos
+            servimos iguarias que conquistam paladares exigentes em Luanda.
+          </p>
+          <p>
+            Nossa equipe de chefs especializados seleciona os melhores ingredientes locais para criar experiências gastronômicas memoráveis em um ambiente sofisticado e acolhedor.
+          </p>
+          <div class="sobre-features">
+            <div class="feature">
+              <i class="fas fa-utensils"></i>
+              <span>Cozinha Premium</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-wine-glass-alt"></i>
+              <span>Carta de Vinhos</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-wifi"></i>
+              <span>Wi-Fi Gratuito</span>
+            </div>
+          </div>
+        </div>
+        <div class="sobre-image">
+          <img src="img/restaurante.jpg" alt="Interior do ORION RESTAURANT" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cardápio -->
+  <section id="menu" class="menu" data-aos="fade-up">
+    <div class="container">
+      <div class="section-header">
+        <h2>Nosso Cardápio</h2>
+        <div class="divider"><span></span></div>
+      </div>
+      <div class="menu-filters">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="entrada">Entradas</button>
+        <button class="filter-btn" data-filter="principal">Pratos Principais</button>
+        <button class="filter-btn" data-filter="sobremesa">Sobremesas</button>
+        <button class="filter-btn" data-filter="bebida">Bebidas</button>
+      </div>
+      <div class="cards">
+        <div class="card" data-category="entrada">
+          <div class="card-img-container">
+            <img src="img/entrada.jpg" alt="Salada verde com toque cítrico" loading="lazy" />
+            <div class="card-badge">Popular</div>
+          </div>
+          <div class="card-content">
+            <h3>Salada Orion</h3>
+            <p>Salada verde com toque cítrico, queijo artesanal e nozes caramelizadas.</p>
+            <div class="card-price">8.500 AOA</div>
+          </div>
+        </div>
+        <div class="card" data-category="principal">
+          <div class="card-img-container">
+            <img src="img/prato-principal.jpg" alt="Filé mignon ao molho madeira" loading="lazy" />
+          </div>
+          <div class="card-content">
+            <h3>Filé Mignon Premium</h3>
+            <p>Filé mignon ao molho madeira com risoto de parmesão e legumes grelhados.</p>
+            <div class="card-price">15.000 AOA</div>
+          </div>
+        </div>
+        <div class="card" data-category="sobremesa">
+          <div class="card-img-container">
+            <img src="img/sobremesa.jpg" alt="Brownie de chocolate com sorvete" loading="lazy" />
+          </div>
+          <div class="card-content">
+            <h3>Brownie Especial</h3>
+            <p>Brownie de chocolate com sorvete de creme e calda de frutas vermelhas.</p>
+            <div class="card-price">6.500 AOA</div>
+          </div>
+        </div>
+        <div class="card" data-category="bebida">
+          <div class="card-img-container">
+            <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Cocktail especial da casa" loading="lazy" />
+          </div>
+          <div class="card-content">
+            <h3>Cocktail Orion</h3>
+            <p>Nossa criação exclusiva com gin premium, frutas cítricas e especiarias.</p>
+            <div class="card-price">7.000 AOA</div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-action">
+        <a href="#" class="btn-outline" id="download-menu">
+          <i class="fas fa-download"></i> Baixar Cardápio Completo (PDF)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Horários e Informações -->
+  <section id="horarios" class="horarios" data-aos="fade-up">
+    <div class="container">
+      <div class="section-header">
+        <h2>Horários e Informações</h2>
+        <div class="divider"><span></span></div>
+      </div>
+      <div class="horarios-grid">
+        <div class="horarios-card">
+          <div class="horarios-icon">
+            <i class="far fa-clock"></i>
+          </div>
+          <h3>Horário de Funcionamento</h3>
+          <ul class="horarios-list">
+            <li><span>Segunda a Sábado:</span> 12h00 - 23h00</li>
+            <li><span>Domingo:</span> 12h00 - 22h00</li>
+            <li><span>Happy Hour:</span> 17h00 - 19h00</li>
+          </ul>
+        </div>
+        <div class="horarios-card">
+          <div class="horarios-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h3>Localização</h3>
+          <address>
+            Avenida 4 de Fevereiro<br>
+            Luanda, Angola<br>
+            <a href="tel:+244923456789" class="contact-link">
+              <i class="fas fa-phone"></i> +244 923 456 789
+            </a>
+            <a href="mailto:reservas@orionrestaurant.ao" class="contact-link">
+              <i class="fas fa-envelope"></i> reservas@orionrestaurant.ao
+            </a>
+          </address>
+        </div>
+        <div class="horarios-card">
+          <div class="horarios-icon">
+            <i class="fas fa-info-circle"></i>
+          </div>
+          <h3>Informações</h3>
+          <ul class="info-list">
+            <li><i class="fas fa-check"></i> Estacionamento gratuito</li>
+            <li><i class="fas fa-check"></i> Acessibilidade</li>
+            <li><i class="fas fa-check"></i> Wi-Fi gratuito</li>
+            <li><i class="fas fa-check"></i> Aceitamos cartões</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeria -->
+  <section class="gallery" data-aos="fade-up">
+    <div class="container">
+      <div class="section-header">
+        <h2>Galeria</h2>
+        <div class="divider"><span></span></div>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+          <img src="img/galeria1.jpg" alt="Prato gourmet do ORION RESTAURANT" loading="lazy" />
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
+          </div>
+        </div>
+        <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+          <img src="img/galeria2.jpg" alt="Ambiente interno do ORION RESTAURANT" loading="lazy" />
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
+          </div>
+        </div>
+        <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+          <img src="img/galeria3.jpg" alt="Equipe do ORION RESTAURANT" loading="lazy" />
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
+          </div>
+        </div>
+        <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Área externa do ORION RESTAURANT" loading="lazy" />
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-action">
+        <a href="https://instagram.com/orionrestaurant" target="_blank" rel="noopener" class="btn-outline">
+          <i class="fab fa-instagram"></i> Ver mais no Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Depoimentos -->
+  <section class="testimonials" data-aos="fade-up">
+    <div class="container">
+      <div class="section-header">
+        <h2>O que dizem sobre nós</h2>
+        <div class="divider"><span></span></div>
+      </div>
+      <div class="testimonials-slider">
+        <div class="testimonial active">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p>"Comida incrível e atendimento impecável! O ambiente é sofisticado e acolhedor ao mesmo tempo. Recomendo o filé mignon, simplesmente perfeito."</p>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Maria S." loading="lazy" />
+            <span>Maria S.</span>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p>"Melhor restaurante de Luanda, sem dúvida! A carta de vinhos é excelente e o serviço é atencioso. Perfeito para ocasiões especiais."</p>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="João P." loading="lazy" />
+            <span>João P.</span>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <p>"Visitei o Orion para um jantar de negócios e fiquei impressionado. O ambiente é perfeito para conversas, a comida é excelente e o staff muito profissional."</p>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Carlos M." loading="lazy" />
+            <span>Carlos M.</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter" data-aos="fade-up">
+    <div class="container">
+      <div class="newsletter-content">
+        <h2>Quer receber nossas promoções?</h2>
+        <p>Cadastre-se para receber novidades, eventos especiais e ofertas exclusivas.</p>
+        <form id="form-newsletter">
+          <div class="form-group">
+            <input type="text" id="name-newsletter" placeholder="Seu nome" required />
+          </div>
+          <div class="form-group">
+            <input type="email" id="email-newsletter" placeholder="Seu e-mail" required />
+          </div>
+          <div class="form-group">
+            <label class="checkbox-container">
+              <input type="checkbox" required />
+              <span class="checkmark"></span>
+              Concordo em receber comunicações do ORION RESTAURANT
+            </label>
+          </div>
+          <button type="submit" class="btn-primary">Cadastrar</button>
+        </form>
+        <p class="msg-status" id="msg-status"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mapa e Contato -->
+  <section id="contato" class="contact-section" data-aos="fade-up">
+    <div class="container">
+      <div class="section-header">
+        <h2>Nosso Local</h2>
+        <div class="divider"><span></span></div>
+      </div>
+      <div class="contact-grid">
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.0876!2d13.2344444!3d-8.8383333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzQ3LjIiUyA0NsKwMzknMDcuNyJX!5e0!3m2!1spt-BR!2sbr!4v1631234567890"
+            allowfullscreen=""
+            loading="lazy"
+            title="Localização do ORION RESTAURANT"
+          ></iframe>
+        </div>
+        <div class="contact-form">
+          <h3>Envie uma mensagem</h3>
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="contact-name">Nome</label>
+              <input type="text" id="contact-name" required />
+            </div>
+            <div class="form-group">
+              <label for="contact-email">E-mail</label>
+              <input type="email" id="contact-email" required />
+            </div>
+            <div class="form-group">
+              <label for="contact-subject">Assunto</label>
+              <select id="contact-subject" required>
+                <option value="">Selecione</option>
+                <option value="reserva">Reserva</option>
+                <option value="evento">Evento Privado</option>
+                <option value="feedback">Feedback</option>
+                <option value="outro">Outro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Mensagem</label>
+              <textarea id="contact-message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Enviar Mensagem</button>
+          </form>
+          <p class="contact-status" id="contact-status"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Botão flutuante para portfólio -->
+  <div class="tooltip-container">
+    <a href="https://g05th.github.io/portfolio/index.html" class="floating-btn" target="_blank" rel="noopener">
+      <img src="img/mini_ghost.png" alt="logo ghost" class="ghost-icon" />
+    </a>
+    <span class="tooltip-text">Voltar ao portfólio</span>
+  </div>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-info">
+          <a href="#" class="footer-logo">ORION RESTAURANT</a>
+          <p>Experiência gastronômica única em Luanda, Angola.</p>
+          <div class="social">
+            <a href="https://facebook.com/orionrestaurant" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/orionrestaurant" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/244923456789" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Links Rápidos</h4>
+          <ul>
+            <li><a href="#sobre">Sobre Nós</a></li>
+            <li><a href="#menu">Cardápio</a></li>
+            <li><a href="#horarios">Horários</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <li><a href="#" id="open-modal-footer">Reservas</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contato</h4>
+          <address>
+            <p><i class="fas fa-map-marker-alt"></i> Avenida 4 de Fevereiro, Luanda</p>
+            <p><i class="fas fa-phone"></i> +244 923 456 789</p>
+            <p><i class="fas fa-envelope"></i> info@orionrestaurant.ao</p>
+          </address>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 ORION RESTAURANT. Todos os direitos reservados.</p>
+        <div class="footer-legal">
+          <a href="#">Política de Privacidade</a>
+          <a href="#">Termos de Uso</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal de Reservas -->
+  <div class="modal" id="reservation-modal">
+    <div class="modal-content">
+      <span class="close-modal" aria-label="Fechar">&times;</span>
+      <h2>Faça sua Reserva</h2>
+      <form id="reservation-form">
+        <div class="form-group">
+          <label for="reservation-name">Nome completo</label>
+          <input type="text" id="reservation-name" placeholder="Seu nome" required />
+        </div>
+        <div class="form-group">
+          <label for="reservation-email">E-mail</label>
+          <input type="email" id="reservation-email" placeholder="Seu e-mail" required />
+        </div>
+        <div class="form-group">
+          <label for="reservation-phone">Telefone</label>
+          <input type="tel" id="reservation-phone" placeholder="Seu telefone" required />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="reservation-date">Data</label>
+            <input type="date" id="reservation-date" required />
+          </div>
+          <div class="form-group">
+            <label for="reservation-time">Hora</label>
+            <input type="time" id="reservation-time" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="reservation-guests">Número de pessoas</label>
+          <select id="reservation-guests" required>
+            <option value="">Selecione</option>
+            <option value="1">1 pessoa</option>
+            <option value="2">2 pessoas</option>
+            <option value="3">3 pessoas</option>
+            <option value="4">4 pessoas</option>
+            <option value="5">5 pessoas</option>
+            <option value="6+">6 ou mais pessoas</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="reservation-occasion">Ocasião (opcional)</label>
+          <select id="reservation-occasion">
+            <option value="">Selecione</option>
+            <option value="aniversario">Aniversário</option>
+            <option value="negocios">Reunião de Negócios</option>
+            <option value="romantico">Jantar Romântico</option>
+            <option value="outro">Outro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="reservation-notes">Observações (opcional)</label>
+          <textarea id="reservation-notes" rows="2" placeholder="Alergias, preferências, etc."></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Confirmar Reserva</button>
+      </form>
+      <p class="reservation-status" id="reservation-status"></p>
+    </div>
+  </div>
+
+  <!-- Modal de Galeria -->
+  <div class="modal" id="gallery-modal">
+    <div class="modal-content gallery-modal-content">
+      <span class="close-modal" aria-label="Fechar">&times;</span>
+      <img id="modal-image" src="" alt="Imagem ampliada" />
+      <div class="modal-nav">
+        <button id="prev-image" aria-label="Imagem anterior"><i class="fas fa-chevron-left"></i></button>
+        <button id="next-image" aria-label="Próxima imagem"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botão Flutuante de Reservas -->
+  <button class="btn-reserve" id="open-modal" aria-label="Reservar mesa">
+    <i class="fas fa-calendar-check"></i> Reservar Mesa
+  </button>
+
+  <!-- Botão Flutuante de WhatsApp -->
+  <a href="https://wa.me/244923456789" class="btn-whatsapp" target="_blank" rel="noopener" aria-label="Contato via WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Inicializar AOS
+    AOS.init({ 
+      duration: 1000,
+      once: true,
+      offset: 100
+    });
+
+    // Menu Mobile
+    const btnMenu = document.getElementById('btn-menu');
+    const navLinks = document.getElementById('nav-links');
+    btnMenu.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      const icon = btnMenu.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+
+    // Fechar menu ao clicar em um link
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        const icon = btnMenu.querySelector('i');
+        icon.classList.add('fa-bars');
+        icon.classList.remove('fa-times');
+      });
+    });
+
+    // Carrossel Hero
+    const slides = document.querySelectorAll('.hero-slide');
+    const prevBtn = document.querySelector('.slider-prev');
+    const nextBtn = document.querySelector('.slider-next');
+    let currentSlide = 0;
+    let slideInterval;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    function startSlideshow() {
+      slideInterval = setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }, 5000);
+    }
+
+    function resetSlideshow() {
+      clearInterval(slideInterval);
+      startSlideshow();
+    }
+
+    prevBtn.addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+      resetSlideshow();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+      resetSlideshow();
+    });
+
+    startSlideshow();
+
+    // Filtro Cardápio
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.card');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+        cards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'block';
+            setTimeout(() => {
+              card.classList.add('show');
+            }, 10);
+          } else {
+            card.classList.remove('show');
+            setTimeout(() => {
+              card.style.display = 'none';
+            }, 300);
+          }
+        });
+      });
+    });
+
+    // Inicializar todos os cards como visíveis
+    cards.forEach(card => {
+      card.classList.add('show');
+    });
+
+    // Newsletter
+    const formNewsletter = document.getElementById('form-newsletter');
+    const nameInput = document.getElementById('name-newsletter');
+    const emailInput = document.getElementById('email-newsletter');
+    const msgStatus = document.getElementById('msg-status');
+    formNewsletter.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(emailInput.value.trim())) {
+        msgStatus.textContent = 'Por favor, insira um e-mail válido.';
+        msgStatus.style.color = 'red';
+      } else {
+        msgStatus.innerHTML = '<i class="fas fa-check-circle"></i> Obrigado, ' + nameInput.value + '! Você foi cadastrado com sucesso.';
+        msgStatus.style.color = 'green';
+        nameInput.value = '';
+        emailInput.value = '';
+        
+        // Simular envio para API
+        console.log('Enviando para API:', {
+          name: nameInput.value,
+          email: emailInput.value,
+          date: new Date()
+        });
+      }
+    });
+
+    // Modal de Reservas
+    const modal = document.getElementById('reservation-modal');
+    const openModalBtn = document.getElementById('open-modal');
+    const openModalHeroBtn = document.getElementById('open-modal-hero');
+    const openModalHero2Btn = document.getElementById('open-modal-hero2');
+    const openModalFooterBtn = document.getElementById('open-modal-footer');
+    const closeModalBtn = document.querySelector('.close-modal');
+    const reservationForm = document.getElementById('reservation-form');
+    const reservationStatus = document.getElementById('reservation-status');
+
+    function openModal() {
+      modal.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    openModalBtn.addEventListener('click', openModal);
+    openModalHeroBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal();
+    });
+    openModalHero2Btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal();
+    });
+    openModalFooterBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal();
+    });
+    closeModalBtn.addEventListener('click', closeModal);
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    // Formulário de Reserva
+    reservationForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('reservation-name').value;
+      const date = document.getElementById('reservation-date').value;
+      const time = document.getElementById('reservation-time').value;
+      const guests = document.getElementById('reservation-guests').value;
+      
+      // Simular envio para API
+      console.log('Enviando reserva:', {
+        name,
+        email: document.getElementById('reservation-email').value,
+        phone: document.getElementById('reservation-phone').value,
+        date,
+        time,
+        guests,
+        occasion: document.getElementById('reservation-occasion').value,
+        notes: document.getElementById('reservation-notes').value
+      });
+      
+      // Mostrar confirmação
+      reservationStatus.innerHTML = `<i class="fas fa-check-circle"></i> Reserva recebida, ${name}! Confirmaremos em breve.`;
+      reservationStatus.style.color = 'green';
+      
+      // Limpar formulário após 3 segundos
+      setTimeout(() => {
+        reservationForm.reset();
+        setTimeout(() => {
+          closeModal();
+          reservationStatus.textContent = '';
+        }, 1000);
+      }, 3000);
+    });
+
+    // Formulário de Contato
+    const contactForm = document.getElementById('contact-form');
+    const contactStatus = document.getElementById('contact-status');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('contact-name').value;
+      
+      // Simular envio para API
+      console.log('Enviando mensagem:', {
+        name,
+        email: document.getElementById('contact-email').value,
+        subject: document.getElementById('contact-subject').value,
+        message: document.getElementById('contact-message').value
+      });
+      
+      // Mostrar confirmação
+      contactStatus.innerHTML = `<i class="fas fa-check-circle"></i> Obrigado, ${name}! Sua mensagem foi enviada.`;
+      contactStatus.style.color = 'green';
+      
+      // Limpar formulário após 3 segundos
+      setTimeout(() => {
+        contactForm.reset();
+        setTimeout(() => {
+          contactStatus.textContent = '';
+        }, 2000);
+      }, 3000);
+    });
+
+    // Depoimentos Carrossel
+    const testimonials = document.querySelectorAll('.testimonial');
+    const dots = document.querySelectorAll('.dot');
+    let currentTestimonial = 0;
+    let testimonialInterval;
+
+    function showTestimonial(index) {
+      testimonials.forEach((testimonial, i) => {
+        testimonial.classList.toggle('active', i === index);
+      });
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    }
+
+    function startTestimonialSlideshow() {
+      testimonialInterval = setInterval(() => {
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        showTestimonial(currentTestimonial);
+      }, 6000);
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        clearInterval(testimonialInterval);
+        currentTestimonial = i;
+        showTestimonial(currentTestimonial);
+        startTestimonialSlideshow();
+      });
+    });
+
+    startTestimonialSlideshow();
+
+    // Galeria Modal
+    // Seleciona os elementos da galeria e do modal
+const galleryItems = document.querySelectorAll('.gallery-item');
+const galleryModal = document.getElementById('gallery-modal');
+const modalImage = document.getElementById('modal-image');
+
+// Renomeamos esta constante para evitar conflito de nome
+const closeGalleryBtn = galleryModal.querySelector('.close-modal');
+
+const prevImageBtn = document.getElementById('prev-image');
+const nextImageBtn = document.getElementById('next-image');
+
+let currentImageIndex = 0;
+const galleryImages = [];
+
+// Coletar todas as imagens da galeria em um array de objetos { src, alt }
+galleryItems.forEach(item => {
+  const img = item.querySelector('img');
+  galleryImages.push({
+    src: img.src,
+    alt: img.alt
+  });
+});
+
+function openGalleryModal(index) {
+  currentImageIndex = index;
+  modalImage.src = galleryImages[index].src;
+  modalImage.alt = galleryImages[index].alt;
+  galleryModal.style.display = 'block';
+  document.body.style.overflow = 'hidden'; // trava scroll de fundo
+}
+
+function closeGalleryModal() {
+  galleryModal.style.display = 'none';
+  document.body.style.overflow = 'auto'; // restaura scroll de fundo
+}
+
+// Ao clicar em cada item da galeria, abre o modal correspondente
+galleryItems.forEach((item, index) => {
+  item.addEventListener('click', () => {
+    openGalleryModal(index);
+  });
+});
+
+// Agora o listener do botão “fechar” usa o nome closeGalleryBtn
+closeGalleryBtn.addEventListener('click', closeGalleryModal);
+
+// Se o usuário clicar fora da imagem (no fundo do modal), também fecha
+galleryModal.addEventListener('click', (e) => {
+  if (e.target === galleryModal) {
+    closeGalleryModal();
+  }
+});
+
+// Botão “anterior” no modal
+prevImageBtn.addEventListener('click', () => {
+  currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+  modalImage.src = galleryImages[currentImageIndex].src;
+  modalImage.alt = galleryImages[currentImageIndex].alt;
+});
+
+// Botão “próxima” no modal
+nextImageBtn.addEventListener('click', () => {
+  currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+  modalImage.src = galleryImages[currentImageIndex].src;
+  modalImage.alt = galleryImages[currentImageIndex].alt;
+});
+
+
+    // Download Menu (simulação)
+    document.getElementById('download-menu').addEventListener('click', (e) => {
+      e.preventDefault();
+      alert('O cardápio completo seria baixado aqui. Em um site real, este link apontaria para um arquivo PDF.');
+    });
+
+    // Parallax simples
+    window.addEventListener('scroll', () => {
+      const hero = document.querySelector('.hero');
+      const scrollPosition = window.pageYOffset;
+      if (hero) {
+        hero.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
+      }
+    });
+
+    // Scroll suave para links de âncora
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        if (this.getAttribute('href') !== '#' && 
+            !this.getAttribute('id')?.includes('open-modal')) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            window.scrollTo({
+              top: target.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
+    });
+
+    // Animação do indicador de scroll
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+      setTimeout(() => {
+        scrollIndicator.classList.add('animate');
+      }, 1000);
+      
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+          scrollIndicator.classList.add('hide');
+        } else {
+          scrollIndicator.classList.remove('hide');
+        }
+      });
+    }
+
+    // Adicionar classe ativa ao menu conforme scroll
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('.nav-links a');
+      
+      let current = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= (sectionTop - 150)) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Detectar quando o usuário chega ao final da página
+    window.addEventListener('scroll', () => {
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
+        document.querySelector('.btn-reserve').classList.add('show-more');
+      } else {
+        document.querySelector('.btn-reserve').classList.remove('show-more');
+      }
+    });
+  </script>
+</body>
+</html>
