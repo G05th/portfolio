@@ -4,7 +4,7 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/portfolio/react/react-restaurant/',
+  base: '/portfolio/react/react-restaurant',
   plugins: [react()],
   resolve: {
     alias: {

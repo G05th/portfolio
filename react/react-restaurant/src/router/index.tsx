@@ -6,7 +6,7 @@ import App from '../App'; // Assuming App.tsx is the main layout component
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/portfolio/react/react-restaurant',
     element: <App />, // Use App as the layout wrapper
     children: [
       {
