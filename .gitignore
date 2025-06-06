@@ -1,15 +1,17 @@
-# Build outputs dos subprojetos (para não versionar duas vezes)
+# Ignore o node_modules e o dist (build intermediário) dos subprojetos
 react/react-restaurant/node_modules/
 react/react-restaurant/dist/
+
 vue/vue-app/node_modules/
 vue/vue-app/dist/
 
-# Dependências genéricas
+html-css-js/**/node_modules/
+html-css-js/**/dist/
+
+# Ignore outros artefatos
 node_modules/
 dist/
 build/
-
-# Logs, editor, etc.
 .DS_Store
+.env*
 .vscode/
-.env
