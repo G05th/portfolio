@@ -4,6 +4,7 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/portfolio/vue/Sabor_Luanda/',
   plugins: [vue()],
   css: {
     postcss: './postcss.config.js',
