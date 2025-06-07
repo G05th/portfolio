@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos base */
+body {
+  @apply font-sans text-gray-800 antialiased;
+  scroll-behavior: smooth;
+}
+
+/* Variáveis personalizadas */
+:root {
+  --primary-color: #c91a1a;
+  --primary-dark: #a01414;
+  --primary-light: #e74c3c;
+}
+
+/* Estilos de componentes reutilizáveis */
+@layer components {
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-4 text-center;
+  }
+  
+  .section-divider {
+    @apply w-24 h-1 bg-primary mx-auto mb-6;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-full font-medium transition-all hover:bg-primary-dark hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border-2 border-white text-white px-6 py-3 rounded-full font-medium transition-all hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2;
+  }
+  
+  .btn-outline {
+    @apply bg-transparent border-2 border-primary text-primary px-6 py-3 rounded-full font-medium transition-all hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+}
+
+/* Animações */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.slide-up-enter-from,
+.slide-up-leave-to {
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+/* Estilos para acessibilidade */
+:focus {
+  @apply outline-none ring-2 ring-primary ring-offset-2;
+}
+
+.sr-only {
+  @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+}
