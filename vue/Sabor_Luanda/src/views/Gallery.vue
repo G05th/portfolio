@@ -36,55 +36,55 @@ export default {
     return {
       images: [
         {
-          src: '/images/restaurant-interior-1.jpg',
+          src: `${import.meta.env.BASE_URL}images/restaurant-interior-1.jpg`,  //`${import.meta.env.BASE_URL}images/restaurant-interior-1.jpg`
           alt: 'Interior do Restaurante',
           title: 'Ambiente Elegante',
           description: 'Nosso salão principal com decoração sofisticada e aconchegante.'
         },
         {
-          src: '/images/restaurant-interior-2.jpg',
+          src: `${import.meta.env.BASE_URL}images/restaurant-interior-2.jpg`,
           alt: 'Área de Jantar',
           title: 'Área de Jantar',
           description: 'Espaço perfeito para momentos especiais e jantares românticos.'
         },
         {
-          src: '/images/restaurant-interior-3.jpg',
+          src: `${import.meta.env.BASE_URL}images/restaurant-interior-3.jpg`,
           alt: 'Bar do Restaurante',
           title: 'Bar Exclusivo',
           description: 'Nosso bar com seleção de bebidas premium e coquetéis exclusivos.'
         },
         {
-          src: '/images/mufete.jpg',
+          src: `${import.meta.env.BASE_URL}images/mufete.jpg`,
           alt: 'Mufete Tradicional',
           title: 'Mufete Tradicional',
           description: 'Um dos pratos mais tradicionais da culinária angolana.'
         },
         {
-          src: '/images/calulu.jpg',
+          src: `${import.meta.env.BASE_URL}images/calulu.jpg`,
           alt: 'Calulu de Peixe',
           title: 'Calulu de Peixe',
           description: 'Prato típico preparado com peixe seco, quiabo e bertalha.'
         },
         {
-          src: '/images/calulu-carne.jpg',
+          src: `${import.meta.env.BASE_URL}images/calulu-carne.jpg`,
           alt: 'Calulu de Carne',
           title: 'Calulu de Carne',
           description: 'Versão especial do calulu preparada com carne selecionada.'
         },
         {
-          src: '/images/sobremesa-1.jpg',
+          src: `${import.meta.env.BASE_URL}images/sobremesa-1.jpg`,
           alt: 'Sobremesa Especial',
           title: 'Sobremesas Artesanais',
           description: 'Nossas sobremesas são preparadas diariamente pelo chef confeiteiro.'
         },
         {
-          src: '/images/sobremesa-2.jpg',
+          src: `${import.meta.env.BASE_URL}images/sobremesa-2.jpg`,
           alt: 'Pudim de Leite',
           title: 'Pudim de Leite',
           description: 'Sobremesa tradicional com calda de caramelo caseira.'
         },
         {
-          src: '/images/sobremesa-3.jpg',
+          src: `${import.meta.env.BASE_URL}images/sobremesa-3.jpg`,
           alt: 'Tiramisu de Maracujá',
           title: 'Tiramisu de Maracujá',
           description: 'Nossa versão tropical do clássico italiano.'

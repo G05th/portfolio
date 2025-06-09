@@ -204,8 +204,8 @@ export default {
               id: 'starter-1',
               name: 'Camarão Grelhado',
               description: 'Camarões grelhados com alho, limão e ervas frescas. Servidos com molho especial da casa.',
-              price: '4.500 AOA',
-              image: '/images/restaurant-interior-1.jpg',
+              price: '4.500 AOA', 
+              image: `${import.meta.env.BASE_URL}images/restaurant-interior-1.jpg`,
               category: 'starters',
               featured: true,
               rating: 5,
@@ -216,7 +216,7 @@ export default {
               name: 'Bruschetta de Tomate',
               description: 'Pão italiano torrado com tomate, manjericão e azeite extra virgem. Perfeito para compartilhar.',
               price: '2.800 AOA',
-              image: '/images/restaurant-interior-2.jpg',
+              image: `${import.meta.env.BASE_URL}images/restaurant-interior-2.jpg`,
               category: 'starters',
               rating: 4,
               new: true
@@ -227,7 +227,7 @@ export default {
               description: 'Mix de folhas verdes, tomate, pepino, cebola roxa e molho da casa. Opção saudável e refrescante.',
               price: '3.200 AOA',
               oldPrice: '3.800 AOA',
-              image: '/images/restaurant-interior-3.jpg',
+              image: `${import.meta.env.BASE_URL}images/restaurant-interior-3.jpg`,
               category: 'starters',
               rating: 4,
               discount: 15
@@ -242,7 +242,7 @@ export default {
               name: 'Mufete Tradicional',
               description: 'Peixe grelhado, feijão de óleo de palma, banana e batata doce. O prato mais tradicional de Angola.',
               price: '8.500 AOA',
-              image: '/images/mufete.jpg',
+              image: `${import.meta.env.BASE_URL}images/mufete.jpg`,
               category: 'main',
               featured: true,
               rating: 5
@@ -252,7 +252,7 @@ export default {
               name: 'Calulu de Peixe',
               description: 'Peixe seco com quiabo, bertalha e óleo de palma. Um prato rico em sabores e tradição.',
               price: '7.800 AOA',
-              image: '/images/calulu.jpg',
+              image: `${import.meta.env.BASE_URL}images/calulu.jpg`,
               category: 'main',
               rating: 4
             },
@@ -261,7 +261,7 @@ export default {
               name: 'Moamba de Galinha',
               description: 'Frango cozido em molho de óleo de palma com quiabo. Acompanha funge ou arroz.',
               price: '6.900 AOA',
-              image: '/images/calulu-carne.jpg',
+              image: `${import.meta.env.BASE_URL}images/calulu-carne.jpg`,
               category: 'main',
               rating: 5,
               new: true
@@ -272,7 +272,7 @@ export default {
               description: 'Filé mignon grelhado ao ponto com molho de vinho tinto e batatas rústicas. Para os amantes de carne.',
               price: '9.500 AOA',
               oldPrice: '11.000 AOA',
-              image: '/images/restaurant-interior-1.jpg',
+              image: `${import.meta.env.BASE_URL}images/restaurant-interior-1.jpg`,
               category: 'main',
               rating: 5,
               discount: 15
@@ -287,7 +287,7 @@ export default {
               name: 'Mousse de Maracujá',
               description: 'Mousse cremoso de maracujá com calda fresca. Uma explosão de sabores tropicais.',
               price: '3.200 AOA',
-              image: '/images/sobremesa-1.jpg',
+              image: `${import.meta.env.BASE_URL}images/sobremesa-1.jpg`,
               category: 'desserts',
               rating: 5
             },
@@ -296,7 +296,7 @@ export default {
               name: 'Pudim de Leite',
               description: 'Pudim tradicional com calda de caramelo. Receita caseira que derrete na boca.',
               price: '2.800 AOA',
-              image: '/images/sobremesa-2.jpg',
+              image: `${import.meta.env.BASE_URL}images/sobremesa-2.jpg`,
               category: 'desserts',
               featured: true,
               rating: 5
@@ -306,7 +306,7 @@ export default {
               name: 'Tiramisu de Maracujá',
               description: 'Nossa versão tropical do clássico italiano. Com creme de maracujá e biscoitos champagne.',
               price: '3.500 AOA',
-              image: '/images/sobremesa-3.jpg',
+              image: `${import.meta.env.BASE_URL}images/sobremesa-3.jpg`,
               category: 'desserts',
               rating: 4,
               new: true
@@ -321,7 +321,7 @@ export default {
               name: 'Sangria Tropical',
               description: 'Vinho tinto com frutas tropicais e especiarias. Refrescante e aromática.',
               price: '4.500 AOA',
-              image: '/images/restaurant-interior-2.jpg',
+              image: `${import.meta.env.BASE_URL}images/restaurant-interior-2.jpg`,
               category: 'drinks',
               featured: true,
               rating: 5
@@ -331,7 +331,7 @@ export default {
               name: 'Suco Natural',
               description: 'Sucos naturais de frutas da estação. Pergunte ao garçom as opções disponíveis.',
               price: '1.800 AOA',
-              image: '/images/restaurant-interior-3.jpg',
+              image: `${import.meta.env.BASE_URL}images/restaurant-interior-3.jpg`,
               category: 'drinks',
               rating: 4
             }

@@ -4,7 +4,7 @@
     <div class="container mx-auto px-4 py-4">
       <div class="flex items-center justify-between">
         <!-- Logo -->
-        <router-link to="/" class="flex items-center">
+        <router-link to="/portfolio/vue/Sabor_Luanda/" class="flex items-center">
           <img src="/images/logo.png" alt="Sabor Luanda Logo" class="h-12 mr-2" />
         </router-link>
 

@@ -132,7 +132,7 @@ export default {
         {
           id: 1,
           name: 'Ana Silva',
-          image: '/images/customer-1.jpg',
+          image: `${import.meta.env.BASE_URL}images/customer-1.jpg`,
           rating: 5,
           text: 'Uma experiência gastronômica incrível! Os pratos são deliciosos e o ambiente é muito acolhedor. Recomendo o Mufete Tradicional, simplesmente divino. Voltarei com certeza!',
           date: '15 de Maio, 2025',
@@ -141,7 +141,7 @@ export default {
         {
           id: 2,
           name: 'Carlos Mendes',
-          image: '/images/customer-2.jpg',
+          image: `${import.meta.env.BASE_URL}images/customer-2.jpg`,
           rating: 4.5,
           text: 'Ótimo lugar para reuniões de negócios. O serviço é impecável e o cardápio variado. A Moamba de Galinha é sensacional! O atendimento foi excepcional.',
           date: '3 de Maio, 2025',
@@ -150,7 +150,7 @@ export default {
         {
           id: 3,
           name: 'Mariana Costa',
-          image: '/images/customer-3.jpg',
+          image: `${import.meta.env.BASE_URL}images/customer-3.jpg`,
           rating: 5,
           text: 'Celebrei meu aniversário aqui e foi perfeito! A equipe foi muito atenciosa e o chef preparou um menu especial para a ocasião. Todos os convidados ficaram impressionados!',
           date: '28 de Abril, 2025',
@@ -159,7 +159,7 @@ export default {
         {
           id: 4,
           name: 'João Paulo',
-          image: '/images/customer-4.jpg',
+          image: `${import.meta.env.BASE_URL}images/customer-4.jpg`,
           rating: 5,
           text: 'Ambiente sofisticado, comida de primeira qualidade e um serviço atencioso. As sobremesas são um capítulo à parte - o Tiramisu de Maracujá é uma verdadeira obra de arte!',
           date: '15 de Abril, 2025',

@@ -17,7 +17,7 @@ export default {
   name: 'ReservationButton',
   methods: {
     openReservationModal() {
-      this.$router.push('/reservation');
+      this.$router.push('/portfolio/vue/Sabor_Luanda/reservation');
     }
   }
 }

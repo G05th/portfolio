@@ -109,17 +109,17 @@ export default {
       isAnimating: false,
       slides: [
         {
-          image: '/images/restaurant-interior-1.jpg',
+          image: `${import.meta.env.BASE_URL}images/restaurant-interior-1.jpg`,
           title: 'Descubra o Melhor Sabor de Luanda',
           subtitle: 'Promoção de inauguração: 40% de desconto neste mês!'
         },
         {
-          image: '/images/restaurant-interior-2.jpg',
+          image: `${import.meta.env.BASE_URL}images/restaurant-interior-2.jpg`,
           title: 'Pratos Feitos com Paixão',
           subtitle: 'Experimente nossas especialidades premiadas!'
         },
         {
-          image: '/images/restaurant-interior-3.jpg',
+          image: `${import.meta.env.BASE_URL}images/restaurant-interior-3.jpg`,
           title: 'Ambiente Sofisticado e Acolhedor',
           subtitle: 'O lugar perfeito para momentos inesquecíveis'
         }
