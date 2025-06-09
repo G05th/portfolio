@@ -12,11 +12,11 @@ import Reservation from './views/Reservation.vue';
 
 // Configurar rotas
 const routes = [
-  { path: '/', name: 'Home', component: Home },
-  { path: '/menu', name: 'Menu', component: Menu },
-  { path: '/gallery', name: 'Gallery', component: Gallery },
-  { path: '/contact', name: 'Contact', component: Contact },
-  { path: '/reservation', name: 'Reservation', component: Reservation },
+  { path: '/portfolio/vue/Sabor_Luanda/', name: 'Home', component: Home },
+  { path: '/portfolio/vue/Sabor_Luanda/menu', name: 'Menu', component: Menu },
+  { path: '/portfolio/vue/Sabor_Luanda/gallery', name: 'Gallery', component: Gallery },
+  { path: '/portfolio/vue/Sabor_Luanda/contact', name: 'Contact', component: Contact },
+  { path: '/portfolio/vue/Sabor_Luanda/reservation', name: 'Reservation', component: Reservation },
 ];
 
 const router = createRouter({
