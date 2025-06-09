@@ -104,12 +104,12 @@ export default {
       scrolled: false,
       transparent: true,
       navItems: [
-        { name: 'Início', path: '/' },
-        { name: 'Sobre', path: '/#about' },
-        { name: 'Cardápio', path: '/#menu' },
-        { name: 'Galeria', path: '/#gallery' },
-        { name: 'Depoimentos', path: '/#testimonials' },
-        { name: 'Contacto', path: '/#contact' }
+        { name: 'Início', path: '/portfolio/vue/Sabor_Luanda/' },
+        { name: 'Sobre', path: '/portfolio/vue/Sabor_Luanda/#about' },
+        { name: 'Cardápio', path: '/portfolio/vue/Sabor_Luanda/#menu' },
+        { name: 'Galeria', path: '/portfolio/vue/Sabor_Luanda/#gallery' },
+        { name: 'Depoimentos', path: '/portfolio/vue/Sabor_Luanda/#testimonials' },
+        { name: 'Contacto', path: '/portfolio/vue/Sabor_Luanda/#contact' }
       ],
       socialLinks: [
         { 
