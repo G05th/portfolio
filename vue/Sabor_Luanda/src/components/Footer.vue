@@ -44,22 +44,22 @@
           <h4 class="text-lg font-semibold mb-4 border-b border-gray-700 pb-2">Links Rápidos</h4>
           <ul class="space-y-2">
             <li>
-              <router-link to="/" class="text-gray-400 hover:text-primary transition-colors">Início</router-link>
+              <router-link to="/portfolio/vue/Sabor_Luanda/" class="text-gray-400 hover:text-primary transition-colors">Início</router-link>
             </li>
             <li>
-              <router-link to="/#about" class="text-gray-400 hover:text-primary transition-colors">Sobre</router-link>
+              <router-link to="/portfolio/vue/Sabor_Luanda/#about" class="text-gray-400 hover:text-primary transition-colors">Sobre</router-link>
             </li>
             <li>
-              <router-link to="/menu" class="text-gray-400 hover:text-primary transition-colors">Cardápio</router-link>
+              <router-link to="/portfolio/vue/Sabor_Luanda/menu" class="text-gray-400 hover:text-primary transition-colors">Cardápio</router-link>
             </li>
             <li>
-              <router-link to="/gallery" class="text-gray-400 hover:text-primary transition-colors">Galeria</router-link>
+              <router-link to="/portfolio/vue/Sabor_Luanda/gallery" class="text-gray-400 hover:text-primary transition-colors">Galeria</router-link>
             </li>
             <li>
-              <router-link to="/reservation" class="text-gray-400 hover:text-primary transition-colors">Reservas</router-link>
+              <router-link to="/portfolio/vue/Sabor_Luanda/reservation" class="text-gray-400 hover:text-primary transition-colors">Reservas</router-link>
             </li>
             <li>
-              <router-link to="/contact" class="text-gray-400 hover:text-primary transition-colors">Contacto</router-link>
+              <router-link to="/portfolio/vue/Sabor_Luanda/contact" class="text-gray-400 hover:text-primary transition-colors">Contacto</router-link>
             </li>
           </ul>
         </div>
