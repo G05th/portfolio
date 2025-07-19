@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Newsletter - Restaurante Gourmet</title>
+  <style>
+    body {
+      margin: 0 !important;
+      padding: 0 !important;
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+      color: #333333;
+    }
+    table {
+      border-collapse: collapse !important;
+    }
+    a {
+      text-decoration: none;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border: 0;
+    }
+    /* Container do botão e tooltip */
+    .tooltip-container {
+  position: fixed;
+  bottom: 140px;
+  right: 20px;
+  z-index: 900;
+}
+
+.floating-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: #007bff;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.floating-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
+
+.ghost-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+  </style>
+</head>
+<body>
+  <table width="100%" bgcolor="#f2f2f2" cellpadding="0" cellspacing="0">
+    <tr>
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" style="background: #ffffff; max-width:600px; margin:0 auto;">
+          <!-- HEADER -->
+          <tr>
+            <td align="center" bgcolor="#e74c3c" style="padding: 20px; color: #ffffff;">
+              <h1 style="margin: 0; font-size: 24px;">Restaurante Gourmet</h1>
+            </td>
+          </tr>
+          <!-- IMAGEM PRINCIPAL -->
+          <tr>
+            <td align="center">
+              <img src="https://via.placeholder.com/600x200.png?text=Promo%C3%A7%C3%A3o+Gastron%C3%B4mica"
+                   alt="Imagem promocional de pratos gourmet com desconto" style="width: 100%; max-width: 600px;" />
+            </td>
+          </tr>
+          <!-- CONTEÚDO -->
+          <tr>
+            <td style="padding: 20px;">
+              <h2 style="font-size: 20px; margin-top: 0;">Desconto Especial de Verão</h2>
+              <p style="font-size: 16px; line-height: 24px;">
+                Olá, <strong>amante da boa gastronomia</strong>! Preparamos um desconto exclusivo para você:
+                <strong>30% OFF</strong> em todos os pratos principais durante este mês de junho.
+              </p>
+              <p style="font-size: 16px; line-height: 24px;">
+                Não perca tempo! Reúna os amigos, a família e venha saborear as delícias do nosso cardápio.
+                Clique abaixo para garantir sua reserva:
+              </p>
+              <p style="text-align: center;">
+                <a href="https://seu-site.com/reservas"
+                   style="display: inline-block; background: #e74c3c; color: #ffffff; padding: 12px 20px;
+                          border-radius: 5px; font-weight: bold; font-size: 16px;">
+                  Reserve Agora
+                </a>
+              </p>
+              <p style="font-size: 16px; line-height: 24px;">
+                Esperamos por você para tornar seus momentos ainda mais especiais!
+              </p>
+            </td>
+          </tr>
+          <!-- FOOTER -->
+          <tr>
+            <td align="center" bgcolor="#333333" style="padding: 15px; color: #ffffff; font-size: 12px;">
+              <p style="margin: 5px 0;">Endereço: Rua das Flores, 123 – Bairro Central, Luanda, Angola</p>
+              <p style="margin: 5px 0;">
+                <a href="https://seu-site.com/desinscrever" style="color: #e74c3c;">Cancelar Inscrição</a>
+              </p>
+              <p style="margin: 5px 0;">&copy; 2025 Restaurante Gourmet. Todos os direitos reservados.</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <div class="tooltip-container">
+    <a href="https://g05th.github.io/portfolio/index.html" class="floating-btn" target="_blank" rel="noopener">
+      <img src="mini_ghost.png" alt="logo ghost" class="ghost-icon" />
+    </a>
+    <span class="tooltip-text">Voltar ao portfólio</span>
+  </div>
+</body>
+</html>

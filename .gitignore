@@ -1,0 +1,17 @@
+# Ignore o node_modules e o dist (build intermediário) dos subprojetos
+react/react-restaurant/node_modules/
+react/react-restaurant/dist/
+
+vue/vue-app/node_modules/
+vue/vue-app/dist/
+
+html-css-js/**/node_modules/
+html-css-js/**/dist/
+
+# Ignore outros artefatos
+node_modules/
+dist/
+build/
+.DS_Store
+.env*
+.vscode/

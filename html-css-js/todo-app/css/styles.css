@@ -1,0 +1,556 @@
+/*==================================================================================
+  Pro To-Do List — CSS Profissional
+  Arquivo: css/styles.css
+==================================================================================*/
+
+/*=============================
+  1. Variáveis de Cores & Fontes
+=============================*/
+:root {
+    --font-primary: 'Inter', sans-serif;
+  
+    /* Modo claro */
+    --color-bg-page: #f0f2f5;
+    --color-card-light: #ffffff;
+    --color-text-light: #2c3e50;
+    --color-accent-light: #3498db;
+    --color-accent-hover-light: #2980b9;
+    --color-border-light: #dcdfe4;
+    --color-placeholder-light: #a5adb8;
+  
+    /* Modo escuro */
+    --color-bg-dark: #1e2a38;
+    --color-card-dark: #273444;
+    --color-text-dark: #ecf0f1;
+    --color-accent-dark: #5dade2;
+    --color-accent-hover-dark: #3498db;
+    --color-border-dark: #4b6376;
+    --color-placeholder-dark: #7f8c8d;
+  
+    /* Prioridades */
+    --priority-low: #2ecc71;
+    --priority-medium: #f1c40f;
+    --priority-high: #e74c3c;
+  
+    /* Espaçamentos */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+  
+    /* Bordas e sombras */
+    --border-radius: 0.5rem;
+    --box-shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --box-shadow-dark: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /*=============================
+    2. Reset & Estilos Globais
+  =============================*/
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: var(--font-primary);
+    background-color: var(--color-bg-page);
+    color: var(--color-text-light);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: var(--spacing-xl);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  body.dark-mode {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-dark);
+  }
+  
+  button,
+  input,
+  select {
+    font-family: var(--font-primary);
+  }
+  
+  /* Remover outline salvo quando em foco */
+  button,
+  input,
+  select {
+    outline: none;
+  }
+  button:focus,
+  input:focus,
+  select:focus {
+    outline: 2px solid var(--color-accent-light);
+    outline-offset: 2px;
+  }
+  body.dark-mode button:focus,
+  body.dark-mode input:focus,
+  body.dark-mode select:focus {
+    outline: 2px solid var(--color-accent-dark);
+  }
+  
+  /*=============================
+    3. Wrapper da Página
+  =============================*/
+  .page-wrapper {
+    width: 100%;
+    max-width: 640px;
+  }
+  
+  /*=============================
+    4. Cabeçalho (Header)
+  =============================*/
+  .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-card-light);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-light);
+    margin-bottom: var(--spacing-xl);
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  body.dark-mode .header {
+    background-color: var(--color-card-dark);
+    box-shadow: var(--box-shadow-dark);
+  }
+  
+  .logo {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-accent-light);
+    transition: color 0.3s;
+  }
+  body.dark-mode .logo {
+    color: var(--color-accent-dark);
+  }
+  
+  #theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  #theme-toggle:hover {
+    transform: scale(1.1);
+  }
+  
+  /*=============================
+    5. Card Principal (Todo Card)
+  =============================*/
+  .todo-card {
+    width: 100%;
+    background-color: var(--color-card-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-light);
+    padding: var(--spacing-xl);
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  body.dark-mode .todo-card {
+    background-color: var(--color-card-dark);
+    box-shadow: var(--box-shadow-dark);
+  }
+  
+  .todo-card__title {
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    color: inherit;
+  }
+  
+  /*=============================
+    6. Formulário de Nova Tarefa
+  =============================*/
+  .todo-form {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .form-group {
+    position: relative;
+  }
+  .form-group--text {
+    grid-column: 1 / span 2; /* texto ocupa 2 colunas */
+  }
+  .form-group--select {
+    grid-column: span 1;
+  }
+  .form-group--date {
+    grid-column: span 1;
+  }
+  .form-group--button {
+    grid-column: 5 / span 1;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Estilo dos Inputs e Selects */
+  .form-input {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 1rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--border-radius);
+    color: var(--color-text-light);
+    background-color: transparent;
+    transition: border-color 0.2s, background-color 0.3s;
+  }
+  
+  .form-input::placeholder {
+    color: var(--color-placeholder-light);
+  }
+  
+  /* Focar no input ou select */
+  .form-input:focus {
+    border-color: var(--color-accent-light);
+    background-color: rgba(52, 152, 219, 0.05);
+  }
+  
+  body.dark-mode .form-input {
+    border-color: var(--color-border-dark);
+    color: var(--color-text-dark);
+  }
+  body.dark-mode .form-input::placeholder {
+    color: var(--color-placeholder-dark);
+  }
+  body.dark-mode .form-input:focus {
+    border-color: var(--color-accent-dark);
+    background-color: rgba(93, 173, 226, 0.1);
+  }
+  
+  /* Botão “Adicionar” */
+  .add-btn {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--color-accent-light);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+  }
+  .add-btn:hover {
+    background-color: var(--color-accent-hover-light);
+    transform: translateY(-2px);
+  }
+  body.dark-mode .add-btn {
+    background-color: var(--color-accent-dark);
+  }
+  body.dark-mode .add-btn:hover {
+    background-color: var(--color-accent-hover-dark);
+  }
+  
+  /*=============================
+    7. Botões de Filtro
+  =============================*/
+  .filter-container {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .filter-btn {
+    flex: 1;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--color-border-light);
+    color: var(--color-text-light);
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+  }
+  
+  body.dark-mode .filter-btn {
+    background-color: var(--color-border-dark);
+    color: var(--color-text-dark);
+  }
+  
+  /* Estado ativo / hover */
+  .filter-btn.active {
+    background-color: var(--color-accent-light);
+    color: #fff;
+  }
+  .filter-btn:not(.active):hover {
+    background-color: var(--color-accent-light);
+    color: #fff;
+  }
+  
+  body.dark-mode .filter-btn.active {
+    background-color: var(--color-accent-dark);
+    color: #fff;
+  }
+  body.dark-mode .filter-btn:not(.active):hover {
+    background-color: var(--color-accent-dark);
+    color: #fff;
+  }
+  
+  /*=============================
+    8. Lista de Itens (Todo List)
+  =============================*/
+  .todo-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Cada item */
+  .todo-item {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto auto auto auto;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background-color: var(--color-card-light);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    box-shadow: var(--box-shadow-light);
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+    cursor: grab;
+  }
+  
+  body.dark-mode .todo-item {
+    background-color: var(--color-card-dark);
+    border-color: var(--color-border-dark);
+    box-shadow: var(--box-shadow-dark);
+  }
+  
+  .todo-item.completed .text {
+    text-decoration: line-through;
+    color: #a5abb3;
+  }
+  
+  /* Texto principal */
+  .todo-item .text {
+    font-size: 1rem;
+    color: inherit;
+    word-break: break-word;
+  }
+  
+  /* Categoria */
+  .todo-item .category {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    background-color: rgba(52, 152, 219, 0.1);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    text-transform: uppercase;
+  }
+  body.dark-mode .todo-item .category {
+    background-color: rgba(93, 173, 226, 0.15);
+    color: var(--color-text-dark);
+  }
+  
+  /* Data de vencimento */
+  .todo-item .due-date {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+  }
+  body.dark-mode .todo-item .due-date {
+    color: var(--color-text-dark);
+  }
+  
+  /* Prioridade (com atributo data-priority para cores) */
+  .todo-item .priority {
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    text-transform: uppercase;
+    color: #fff;
+  }
+  .todo-item .priority[data-priority="Baixa"] {
+    background-color: var(--priority-low);
+  }
+  .todo-item .priority[data-priority="Média"] {
+    background-color: var(--priority-medium);
+  }
+  .todo-item .priority[data-priority="Alta"] {
+    background-color: var(--priority-high);
+  }
+  
+  /* Botões de ação (Editar, Concluir, Excluir) */
+  .todo-item button {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.2s, transform 0.2s;
+  }
+  .todo-item button:hover {
+    transform: scale(1.2);
+  }
+  
+  .todo-item button.edit {
+    color: var(--color-accent-light);
+  }
+  .todo-item button.edit:hover {
+    color: var(--color-accent-hover-light);
+  }
+  body.dark-mode .todo-item button.edit {
+    color: var(--color-accent-dark);
+  }
+  body.dark-mode .todo-item button.edit:hover {
+    color: var(--color-accent-hover-dark);
+  }
+  
+  .todo-item button.complete {
+    color: var(--priority-low);
+  }
+  .todo-item button.complete:hover {
+    color: var(--priority-medium);
+  }
+  body.dark-mode .todo-item button.complete {
+    color: #27ae60;
+  }
+  body.dark-mode .todo-item button.complete:hover {
+    color: #f1c40f;
+  }
+  
+  .todo-item button.delete {
+    color: var(--priority-high);
+  }
+  .todo-item button.delete:hover {
+    color: #c0392b;
+  }
+
+  /*btn flutuante*/
+  .tooltip-container {
+    position: fixed;
+    bottom: 140px;
+    right: 20px;
+    z-index: 900;
+  }
+  
+  .floating-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #007bff;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+    text-decoration: none;
+  }
+  
+  .floating-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+  }
+  
+  .ghost-icon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  /* Animação de entrada dos itens */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .todo-item {
+    animation: fadeInUp 0.4s ease forwards;
+  }
+  
+  /*=============================
+    9. Responsividade
+  =============================*/
+  @media (max-width: 768px) {
+    /* No formulário, empilha tudo em uma coluna */
+    .todo-form {
+      grid-template-columns: 1fr;
+    }
+    .form-group--text,
+    .form-group--select,
+    .form-group--date,
+    .form-group--button {
+      grid-column: 1 / span 1;
+    }
+  
+    /* Botões de filtro empilham em linhas ou encolhem mais */
+    .filter-container {
+      flex-direction: column;
+    }
+    .filter-btn {
+      width: 100%;
+    }
+  
+    /* Itens da lista: esconde detalhes (categoria/due-date/prioridade) */
+    .todo-item {
+      grid-template-columns: 1fr auto auto;
+    }
+    .todo-item .category,
+    .todo-item .due-date,
+    .todo-item .priority {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .header {
+      flex-direction: column;
+      row-gap: var(--spacing-sm);
+    }
+    .logo {
+      font-size: 1.5rem;
+    }
+    #theme-toggle {
+      font-size: 1.25rem;
+      align-self: flex-end;
+    }
+  }
+  

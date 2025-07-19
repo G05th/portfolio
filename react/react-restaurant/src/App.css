@@ -1,0 +1,50 @@
+/*btn flutuante*/
+.tooltip-container {
+    position: fixed;
+    bottom: 140px;
+    right: 20px;
+    z-index: 900;
+  }
+  
+  .floating-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #007bff;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+    text-decoration: none;
+  }
+  
+  .floating-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+  }
+  
+  .ghost-icon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
